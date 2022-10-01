@@ -1,0 +1,25 @@
+numpy==1.22.3
+pandas==1.4.2
+
+#geopandas==0.10.1
+#geobr==0.1.9
+opencv-python==4.5.5.64
+jupyter-book==0.12.2
+notebook==6.4.8
+sklearn==0.0
+tqdm==4.64.1
+
+#Parquet files
+#pyarrow
+#fastparquet
+
+#MlFlow
+#mlflow==1.29.9
+#hyperopt==0.2.7
+#xgboost
+
+#Streamlit, dash e gradio
+streamlit==1.13.0
+dash==2.4.1
+gradio==3.4
+
