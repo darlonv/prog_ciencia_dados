@@ -23,3 +23,5 @@ streamlit==1.13.0
 dash==2.4.1
 gradio==3.4
 
+#doc
+#pandoc
