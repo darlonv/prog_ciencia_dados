@@ -3,7 +3,15 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: Planejamento.ipynb
-# - file: notebooks
+parts:
+    - caption: Curso
+      numbered: False
+      chapters:
+        - file: Planejamento.ipynb
+        - file: content/01-Intro/01-Intro
+    - caption: Python
+      numbered: False
+      chapters:
+        - file: content/02-Python/01-Intro/01-A_Linguagem
+        - file: content/02-Python/01-Intro/02-Operadores
 # - file: markdown-notebooks
