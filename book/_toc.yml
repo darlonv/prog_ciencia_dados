@@ -17,6 +17,27 @@ parts:
           - file: content/02-Python/01-Intro/02-Operadores
           - file: content/02-Python/01-Intro/03-Identificadores
           - file: content/02-Python/01-Intro/04-Tipos_de_variaveis
+          - file: content/02-Python/02-Selecao/01-if
+          - file: content/02-Python/02-Selecao/02-elif
+          - file: content/02-Python/03-Repeticao/01-Repeticao
+          - file: content/02-Python/03-Repeticao/02-For
+          - file: content/02-Python/03-Repeticao/03-While
+          - file: content/02-Python/04-Funcoes/01-Funcoes
+          - file: content/02-Python/04-Funcoes/02-Escopo
+          - file: content/02-Python/04-Funcoes/03-Recursividade
+          - file: content/02-Python/05-Estrutura/01-Sequencias
+          - file: content/02-Python/05-Estrutura/02-Listas
+          - file: content/02-Python/05-Estrutura/03-Strings
+          - file: content/02-Python/05-Estrutura/04-Tuplas
+          - file: content/02-Python/05-Estrutura/05-Conjuntos
+          - file: content/02-Python/05-Estrutura/06-Dicionarios
+          - file: content/02-Python/06-Bibliotecas/01-Bibliotecas
+          - file: content/02-Python/08-Arquivos/01-Arquivos
+          - file: content/02-Python/08-Arquivos/02-Texto
+          - file: content/02-Python/08-Arquivos/03-csv
+          - file: content/02-Python/08-Arquivos/04-json
+          - file: content/02-Python/08-Arquivos/05-xml
+          - file: content/02-Python/08-Arquivos/06-Serializacao_binario
     - caption: Numpy
       numbered: False
       chapters:
