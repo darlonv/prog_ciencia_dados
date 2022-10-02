@@ -12,16 +12,23 @@ parts:
       numbered: False
       chapters:
         - file: content/01-Intro/01-Intro
-        - file: content/02-Python/01-Intro/01-A_Linguagem
-        - file: content/02-Python/01-Intro/02-Operadores
+          sections:
+          - file: content/02-Python/01-Intro/01-A_Linguagem
+          - file: content/02-Python/01-Intro/02-Operadores
+          - file: content/02-Python/01-Intro/03-Identificadores
+          - file: content/02-Python/01-Intro/04-Tipos_de_variaveis
     - caption: Numpy
       numbered: False
       chapters:
         - file: content/03-Numpy/01-Arrays
+          sections:
+          - file: content/03-Numpy/02-Operacoes
     - caption: Pandas
       numbered: False
       chapters:
         - file: content/04-Pandas/01-Pandas
+          sections:
+          - file: content/04-Pandas/01-Pandas_exercicio_enem
     - caption: Apresentacao
       numbered: False
       chapters:
