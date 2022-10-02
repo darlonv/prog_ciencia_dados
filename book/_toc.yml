@@ -8,10 +8,26 @@ parts:
       numbered: False
       chapters:
         - file: Planejamento.ipynb
-        - file: content/01-Intro/01-Intro
     - caption: Python
       numbered: False
       chapters:
+        - file: content/01-Intro/01-Intro
         - file: content/02-Python/01-Intro/01-A_Linguagem
         - file: content/02-Python/01-Intro/02-Operadores
+    - caption: Numpy
+      numbered: False
+      chapters:
+        - file: content/03-Numpy/01-Arrays
+    - caption: Pandas
+      numbered: False
+      chapters:
+        - file: content/04-Pandas/01-Pandas
+    - caption: Apresentacao
+      numbered: False
+      chapters:
+        - file: content/05-Apresentacao/01-Streamlit
+    - caption: Big Data
+      numbered: False
+      chapters:
+        - file: content/06-Big_data/01-Estruturas_probabilisticas
 # - file: markdown-notebooks
