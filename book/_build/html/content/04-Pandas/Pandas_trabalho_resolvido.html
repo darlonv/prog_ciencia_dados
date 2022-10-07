@@ -1,0 +1,1005 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>T1-2 &#8212; Programação para Ciência de Dados</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Programação para Ciência de Dados</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Pesquise este livro ..." aria-label="Pesquise este livro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Curso
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Planejamento.html">
+   Planejamento
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-Intro/01-Intro.html">
+   Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/01-Intro/01-A_Linguagem.html">
+     A linguagem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/01-Intro/02-Operadores.html">
+     Expressões
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/01-Intro/03-Identificadores.html">
+     Identificadores
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/01-Intro/04-Tipos_de_variaveis.html">
+     Tipos de variáveis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/02-Selecao/01-if.html">
+     If
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/02-Selecao/02-elif.html">
+     elif
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/03-Repeticao/01-Repeticao.html">
+     Estruturas de repetição
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/03-Repeticao/02-For.html">
+     For
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/03-Repeticao/03-While.html">
+     While
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/04-Funcoes/01-Funcoes.html">
+     Funções
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/04-Funcoes/02-Escopo.html">
+     Escopo de variáveis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/05-Estruturas/01-Sequencias.html">
+     Sequências
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/05-Estruturas/02-Listas.html">
+     Listas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/05-Estruturas/03-Strings.html">
+     <em>
+      Strings
+     </em>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/05-Estruturas/04-Tuplas.html">
+     Tuplas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/05-Estruturas/05-Conjuntos.html">
+     Conjuntos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/05-Estruturas/06-Dicionarios.html">
+     Dicionários
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/08-Arquivos/01-Arquivos.html">
+     Arquivos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/08-Arquivos/02-Texto.html">
+     Arquivos texto
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/08-Arquivos/03-csv.html">
+     CSV
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/08-Arquivos/04-json.html">
+     JSON
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/08-Arquivos/05-xml.html">
+     XML
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/08-Arquivos/06-Serializacao_binario.html">
+     Serialização e arquivos binários
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/09-Funcoes_especiais/01-Iterators_e_generators.html">
+     Iterators e generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/09-Funcoes_especiais/02-Comprehensions.html">
+     Comprehensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/09-Funcoes_especiais/03-Enumerate_e_zip.html">
+     Enumerate e Zip
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/09-Funcoes_especiais/04-Funcoes_lambda.html">
+     Map e funções lambda
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Alternar de navegação" aria-controls="site-navigation"
+                title="Alternar de navegação" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Baixe esta página"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/04-Pandas/Pandas_trabalho_resolvido.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Baixar arquivo fonte" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir em PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo tela cheia"
+        title="Modo tela cheia"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/04-Pandas/Pandas_trabalho_resolvido.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lançamento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>T1-2</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="t1-2">
+<h1>T1-2<a class="headerlink" href="#t1-2" title="Permalink to this headline">¶</a></h1>
+<p>Responda ás questões elencadas abaixo utilizando a linguagem de programação Python e as bibliotecas Pandas, Matplotlib e Seaborn.</p>
+<p>Este trabalho consiste em realizar uma análise sobre dados de ocorrências de acidentes de trânsito, ocorridos no ano de 2018.</p>
+<p>A fonte dos dados e especificações podem ser consultados no portal da Polícia Rodoviária Federal, disponível <a class="reference external" href="https://portal.prf.gov.br/dados-abertos">aqui</a>.</p>
+<p><strong>Dicas</strong></p>
+<ul class="simple">
+<li><p>Assim como nos DataFrames, nas Series tamém é possível utilizar a função <code class="docutils literal notranslate"><span class="pre">.head()</span></code>.</p></li>
+<li><p>A função <code class="docutils literal notranslate"><span class="pre">.value_counts()</span></code> retorna os valores ordenados por quantidade, em ordem decrescente.</p></li>
+<li><p>Com a função <code class="docutils literal notranslate"><span class="pre">.value_counts()</span></code> também é possível gerar gráficos, p.ex. <code class="docutils literal notranslate"><span class="pre">.value_counts().plot()</span></code> ou <code class="docutils literal notranslate"><span class="pre">.value_counts().plot.bar()</span></code>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ok&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ok
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;seaborn&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">########################</span>
+<span class="c1">#Leitura da base no diretório local (Jupyter)</span>
+<span class="c1">########################</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./bases/datatran2018.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;latin-1&#39;</span><span class="p">)</span> <span class="c1"># Carrega a base</span>
+
+<span class="c1">########################</span>
+<span class="c1">#Leitura da base no Google Drive (Colaboratory)</span>
+<span class="c1">########################</span>
+<span class="c1"># from google.colab import drive</span>
+<span class="c1"># drive.mount(&#39;/drive&#39;) #monta a base no google drive</span>
+<span class="c1"># database_path = &#39;/drive/Shareddrives/BasesPublicas/Bases/PRF/datatran2018.csv&#39; #caminho da base de dados</span>
+<span class="c1"># df = pd.read_csv(database_path, sep=&#39;;&#39;, encoding=&#39;latin-1&#39;) #Carrega a base</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1">#Observa as primeiras linhas da base</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>data_inversa</th>
+      <th>dia_semana</th>
+      <th>horario</th>
+      <th>uf</th>
+      <th>br</th>
+      <th>km</th>
+      <th>municipio</th>
+      <th>causa_acidente</th>
+      <th>tipo_acidente</th>
+      <th>...</th>
+      <th>feridos_graves</th>
+      <th>ilesos</th>
+      <th>ignorados</th>
+      <th>feridos</th>
+      <th>veiculos</th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>regional</th>
+      <th>delegacia</th>
+      <th>uop</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>99973.0</td>
+      <td>2018-01-01</td>
+      <td>segunda-feira</td>
+      <td>00:20:00</td>
+      <td>RJ</td>
+      <td>116.0</td>
+      <td>303,5</td>
+      <td>RESENDE</td>
+      <td>Condutor Dormindo</td>
+      <td>Saída de leito carroçável</td>
+      <td>...</td>
+      <td>4</td>
+      <td>1</td>
+      <td>0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>-22,46937</td>
+      <td>-44,44705</td>
+      <td>SR-RJ</td>
+      <td>DEL5/7</td>
+      <td>UOP03/RJ</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>99976.0</td>
+      <td>2018-01-01</td>
+      <td>segunda-feira</td>
+      <td>00:40:00</td>
+      <td>SC</td>
+      <td>282.0</td>
+      <td>0,4</td>
+      <td>FLORIANOPOLIS</td>
+      <td>Não guardar distância de segurança</td>
+      <td>Colisão traseira</td>
+      <td>...</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>-27,59971687</td>
+      <td>-48,57565694</td>
+      <td>SR-SC</td>
+      <td>DEL8/1</td>
+      <td>UOP01/SC</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>99977.0</td>
+      <td>2018-01-01</td>
+      <td>segunda-feira</td>
+      <td>00:30:00</td>
+      <td>RJ</td>
+      <td>493.0</td>
+      <td>1</td>
+      <td>ITABORAI</td>
+      <td>Ultrapassagem Indevida</td>
+      <td>Colisão frontal</td>
+      <td>...</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>1</td>
+      <td>3</td>
+      <td>-22,763901</td>
+      <td>-42,927532</td>
+      <td>SR-RJ</td>
+      <td>DEL5/4</td>
+      <td>UOP02/RJ</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>99981.0</td>
+      <td>2018-01-01</td>
+      <td>segunda-feira</td>
+      <td>01:15:00</td>
+      <td>RS</td>
+      <td>386.0</td>
+      <td>134</td>
+      <td>SARANDI</td>
+      <td>Ingestão de Álcool</td>
+      <td>Colisão transversal</td>
+      <td>...</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>-27,953636</td>
+      <td>-52,916374</td>
+      <td>SR-RS</td>
+      <td>DEL9/14</td>
+      <td>UOP01/RS</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>99982.0</td>
+      <td>2018-01-01</td>
+      <td>segunda-feira</td>
+      <td>00:20:00</td>
+      <td>RS</td>
+      <td>293.0</td>
+      <td>151,7</td>
+      <td>CANDIOTA</td>
+      <td>Falta de Atenção à Condução</td>
+      <td>Saída de leito carroçável</td>
+      <td>...</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>-31,395214</td>
+      <td>-53,78391174</td>
+      <td>SR-RS</td>
+      <td>DEL9/11</td>
+      <td>UOP03/RS</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 30 columns</p>
+</div></div></div>
+</div>
+<p><strong>Item 01</strong></p>
+<ul class="simple">
+<li><p>Qual é o estado que mais teve o manior número de acidentes?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">estados</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;uf&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">estados</span><span class="p">[</span> <span class="n">estados</span> <span class="o">==</span> <span class="n">estados</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MG    9066
+Name: uf, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Item 02</strong></p>
+<ul class="simple">
+<li><p>Apresente a quantidade de acidentes por dia da semana.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;dia_semana&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>domingo          11283
+sábado           11239
+sexta-feira      10632
+segunda-feira     9422
+quinta-feira      9230
+quarta-feira      8824
+terça-feira       8665
+Name: dia_semana, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Item 03</strong></p>
+<ul class="simple">
+<li><p>Apresente a quantidade de acidentes por estado.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;uf&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MG    9066
+SC    8497
+PR    7952
+RJ    4575
+SP    4516
+RS    4445
+BA    3555
+GO    3464
+PE    2715
+ES    2642
+MT    2631
+CE    1697
+RO    1629
+PB    1588
+MS    1530
+RN    1416
+PI    1371
+MA    1272
+PA    1260
+DF     867
+AL     691
+TO     589
+SE     559
+RR     236
+AC     235
+AP     173
+AM     124
+Name: uf, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Item 04</strong></p>
+<ul class="simple">
+<li><p>De acordo com a quantidade de acidentes, quais são as 5 rodovias mais perigosas?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;br&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>101.0    11212
+116.0     9972
+381.0     3550
+40.0      3220
+153.0     2834
+Name: br, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Item 05</strong></p>
+<ul class="simple">
+<li><p>Considerando apenas acidentes com vítimas fatais, qual rodovia é a mais perigosa?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_tmp</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;mortos&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">df_tmp</span><span class="p">[</span><span class="s1">&#39;br&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>116.0    582
+Name: br, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Item 06</strong></p>
+<ul class="simple">
+<li><p>No Paraná, quais são as 10 cidades do interior que possuiram o maior número de acidentes?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_tmp</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;uf&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;PR&#39;</span><span class="p">]</span>
+<span class="n">df_tmp</span> <span class="o">=</span> <span class="n">df_tmp</span><span class="p">[</span><span class="n">df_tmp</span><span class="p">[</span><span class="s1">&#39;municipio&#39;</span><span class="p">]</span><span class="o">!=</span> <span class="s1">&#39;CURITIBA&#39;</span><span class="p">]</span>
+<span class="n">df_tmp</span><span class="p">[</span><span class="s1">&#39;municipio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SAO JOSE DOS PINHAIS     448
+MARINGA                  443
+CASCAVEL                 338
+FOZ DO IGUACU            299
+CAMPINA GRANDE DO SUL    285
+PONTA GROSSA             268
+PARANAGUA                178
+APUCARANA                156
+CAMPO LARGO              153
+TIJUCAS DO SUL           152
+Name: municipio, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Item 07</strong></p>
+<ul class="simple">
+<li><p>Os acidentes com vítimas fatais ocorrem em sua maioria em trechos de curvas ou de reta? Apresente um gráfico indicando estes números.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_tmp</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;mortos&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">df_tmp</span><span class="p">[</span><span class="s1">&#39;tracado_via&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reta                     2831
+Curva                     825
+Não Informado             515
+Desvio Temporário         157
+Interseção de vias         79
+Ponte                      34
+Rotatória                  28
+Retorno Regulamentado      22
+Viaduto                    11
+Túnel                       3
+Name: tracado_via, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Item 08</strong></p>
+<ul class="simple">
+<li><p>Quais são as 10 maiores causas de acidentes?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;causa_acidente&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Falta de Atenção à Condução                          25830
+Desobediência às normas de trânsito pelo condutor     7189
+Velocidade Incompatível                               6849
+Ingestão de Álcool                                    5201
+Não guardar distância de segurança                    4262
+Defeito Mecânico no Veículo                           3716
+Condutor Dormindo                                     2633
+Pista Escorregadia                                    2549
+Falta de Atenção do Pedestre                          2073
+Animais na Pista                                      1614
+Name: causa_acidente, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Item 09</strong></p>
+<ul class="simple">
+<li><p>Em que estado ocorre o maior núemro de acidentes em que a causa foi animais na pista?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_tmp</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;causa_acidente&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Animais na Pista&#39;</span><span class="p">]</span>
+<span class="n">df_tmp</span><span class="p">[</span><span class="s1">&#39;uf&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MG    198
+PE    122
+RS    113
+PR    105
+MS     94
+BA     83
+RJ     79
+GO     78
+RN     78
+PI     77
+MT     74
+CE     72
+PB     67
+SC     64
+MA     57
+SP     47
+AL     44
+RO     36
+ES     36
+PA     31
+SE     21
+RR     12
+TO     10
+AC      5
+DF      5
+AM      4
+AP      2
+Name: uf, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Item 10</strong></p>
+<ul class="simple">
+<li><p>Em Cascavel, no Paraná, qual são as rodovias que existem na base de dados?</p></li>
+</ul>
+<p><strong>Item 11</strong></p>
+<ul class="simple">
+<li><p>Em Cascavel, no Paraná, qual é a rodovia que mais possui acidentes?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_tmp</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;uf&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;PR&#39;</span><span class="p">]</span>
+<span class="n">df_tmp</span> <span class="o">=</span> <span class="n">df_tmp</span><span class="p">[</span><span class="n">df_tmp</span><span class="p">[</span><span class="s1">&#39;municipio&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;CASCAVEL&#39;</span><span class="p">]</span>
+<span class="n">df_tmp</span><span class="p">[</span><span class="s1">&#39;br&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>277.0    242
+467.0     67
+369.0     22
+163.0      6
+Name: br, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_tmp</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;uf&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;PR&#39;</span><span class="p">]</span>
+<span class="n">df_tmp</span> <span class="o">=</span> <span class="n">df_tmp</span><span class="p">[</span><span class="n">df_tmp</span><span class="p">[</span><span class="s1">&#39;municipio&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;CASCAVEL&#39;</span><span class="p">]</span>
+<span class="n">rodo</span> <span class="o">=</span> <span class="n">df_tmp</span><span class="p">[</span><span class="s1">&#39;br&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rodo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>277.0
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Item 12</strong></p>
+<ul class="simple">
+<li><p>Em Cascavel, no Paraná, em qual kilômetro da rodovia BR 277 ocorreram o maior número de acidentes com vítimas fatais? Obs: por padrão a coluna <code class="docutils literal notranslate"><span class="pre">br</span></code> está com valores do tipo <code class="docutils literal notranslate"><span class="pre">float</span></code>. (<code class="docutils literal notranslate"><span class="pre">277.0</span></code>).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_tmp</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;uf&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;PR&#39;</span><span class="p">]</span>
+<span class="n">df_tmp</span> <span class="o">=</span> <span class="n">df_tmp</span><span class="p">[</span><span class="n">df_tmp</span><span class="p">[</span><span class="s1">&#39;municipio&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;CASCAVEL&#39;</span><span class="p">]</span>
+<span class="n">df_tmp</span> <span class="o">=</span> <span class="n">df_tmp</span><span class="p">[</span><span class="n">df_tmp</span><span class="p">[</span><span class="s1">&#39;br&#39;</span><span class="p">]</span><span class="o">==</span><span class="mf">277.0</span><span class="p">]</span>
+<span class="n">df_tmp</span><span class="p">[</span><span class="s1">&#39;km&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>584      17
+592      11
+593       9
+590       9
+588       9
+         ..
+584,8     1
+583,4     1
+599,4     1
+496,4     1
+590,2     1
+Name: km, Length: 109, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Item 13</strong></p>
+<ul class="simple">
+<li><p>Gere um gráfico apresentando os dias da semana em que ocorreram mais acidente por causa de Ingestão de Álcool.</p></li>
+<li><p>Comente sobre o resultado obtido</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_tmp</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;causa_acidente&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Ingestão de Álcool&#39;</span><span class="p">]</span>
+<span class="n">df_tmp</span><span class="p">[</span><span class="s1">&#39;dia_semana&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7eff54934cf8&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Pandas_trabalho_resolvido_34_1.png" src="../../_images/Pandas_trabalho_resolvido_34_1.png" />
+</div>
+</div>
+<p><strong>Item 14</strong></p>
+<ul class="simple">
+<li><p>Apresente um gráfico que mostre a quantidade de acidentes de acordo com a condição meteorológica, subdividida de acordo com a fase do dia.</p></li>
+<li><p>Explique o resultado obtido.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;condicao_metereologica&#39;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;fase_dia&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Pandas_trabalho_resolvido_36_0.png" src="../../_images/Pandas_trabalho_resolvido_36_0.png" />
+</div>
+</div>
+<p><strong>Item 15</strong></p>
+<ul class="simple">
+<li><p>Faça uma análise utilizando algum critério próprio e explique o resultado obtido.</p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/04-Pandas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      De Darlon Vasata<br/>
+    
+        &copy; direito autoral 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

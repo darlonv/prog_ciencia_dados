@@ -1,0 +1,876 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strings &#8212; Programação para Ciência de Dados</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Tuplas" href="04-Tuplas.html" />
+    <link rel="prev" title="Listas" href="02-Listas.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Programação para Ciência de Dados</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Pesquise este livro ..." aria-label="Pesquise este livro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Curso
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Planejamento.html">
+   Planejamento
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../01-Intro/01-Intro.html">
+   Python
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-Intro/01-A_Linguagem.html">
+     A linguagem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-Intro/02-Operadores.html">
+     Expressões
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-Intro/03-Identificadores.html">
+     Identificadores
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-Intro/04-Tipos_de_variaveis.html">
+     Tipos de variáveis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Selecao/01-if.html">
+     If
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Selecao/02-elif.html">
+     elif
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-Repeticao/01-Repeticao.html">
+     Estruturas de repetição
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-Repeticao/02-For.html">
+     For
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-Repeticao/03-While.html">
+     While
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-Funcoes/01-Funcoes.html">
+     Funções
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-Funcoes/02-Escopo.html">
+     Escopo de variáveis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-Sequencias.html">
+     Sequências
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-Listas.html">
+     Listas
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     <em>
+      Strings
+     </em>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04-Tuplas.html">
+     Tuplas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05-Conjuntos.html">
+     Conjuntos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06-Dicionarios.html">
+     Dicionários
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08-Arquivos/01-Arquivos.html">
+     Arquivos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08-Arquivos/02-Texto.html">
+     Arquivos texto
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08-Arquivos/03-csv.html">
+     CSV
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08-Arquivos/04-json.html">
+     JSON
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08-Arquivos/05-xml.html">
+     XML
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08-Arquivos/06-Serializacao_binario.html">
+     Serialização e arquivos binários
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-Funcoes_especiais/01-Iterators_e_generators.html">
+     Iterators e generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-Funcoes_especiais/02-Comprehensions.html">
+     Comprehensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-Funcoes_especiais/03-Enumerate_e_zip.html">
+     Enumerate e Zip
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-Funcoes_especiais/04-Funcoes_lambda.html">
+     Map e funções lambda
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Alternar de navegação" aria-controls="site-navigation"
+                title="Alternar de navegação" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Baixe esta página"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/02-Python/05-Estruturas/03-Strings.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Baixar arquivo fonte" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir em PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo tela cheia"
+        title="Modo tela cheia"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/02-Python/05-Estruturas/03-Strings.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lançamento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Conteúdo
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operacoes-sobre-sequencias">
+   Operações sobre sequências
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operacoes-especificas">
+   Operações específicas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formatacao">
+   Formatação
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#substituicao">
+     Substituição
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#espaco-do-valor">
+     Espaço do valor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alinhamento">
+     Alinhamento
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tipos-de-dados">
+     Tipos de dados
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#substituicoes-aninhadas">
+     Substituições aninhadas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#separacao">
+     Separação
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fatiamento">
+     Fatiamento
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   Referências
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Strings</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Conteúdo </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operacoes-sobre-sequencias">
+   Operações sobre sequências
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operacoes-especificas">
+   Operações específicas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#formatacao">
+   Formatação
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#substituicao">
+     Substituição
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#espaco-do-valor">
+     Espaço do valor
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alinhamento">
+     Alinhamento
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tipos-de-dados">
+     Tipos de dados
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#substituicoes-aninhadas">
+     Substituições aninhadas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#separacao">
+     Separação
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fatiamento">
+     Fatiamento
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   Referências
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="strings">
+<h1><em>Strings</em><a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h1>
+<p>O tipo <code class="docutils literal notranslate"><span class="pre">str</span></code> corresponde às <em>strings</em>. Uma <em>string</em> é uma <strong>sequência</strong> de caracteres, e denota-se um dado como uma <em>string</em> colocando seu conteúdo entre aspas simples (<code class="docutils literal notranslate"><span class="pre">'</span></code>) ou aspas duplas (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>), de maneira equivalente. Cada elemento é um caractere.</p>
+<p><strong>Exemplo</strong></p>
+<p>A variável <code class="docutils literal notranslate"><span class="pre">s</span></code> recebe o texto <code class="docutils literal notranslate"><span class="pre">pudim</span></code>, e em seguida observa-se o tipo da variável <code class="docutils literal notranslate"><span class="pre">s</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;pudim&#39;</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Como uma <em>string</em> é uma sequência, pode-se acessar cada elemento (caractere) pela sua posição.</p>
+<p><strong>Exemplo</strong></p>
+<p>Pode-se acessar o primeiro caracter (<code class="docutils literal notranslate"><span class="pre">'p'</span></code>) acessando a posição 0, e o terceiro caracter (<code class="docutils literal notranslate"><span class="pre">'d'</span></code>) acessando a posição 2.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><strong>Atividade</strong></p>
+<ul class="simple">
+<li><p>Crie uma variável <em>string</em> chamada <code class="docutils literal notranslate"><span class="pre">p</span></code>, com o conteúdo <code class="docutils literal notranslate"><span class="pre">programação</span></code>.</p></li>
+<li><p>Mostre todos os caracteres de <code class="docutils literal notranslate"><span class="pre">p</span></code> nas posições de número par.</p></li>
+</ul>
+<div class="section" id="operacoes-sobre-sequencias">
+<h2>Operações sobre sequências<a class="headerlink" href="#operacoes-sobre-sequencias" title="Permalink to this headline">¶</a></h2>
+<p>Algumas operações podem ser realizadas diretamente sobre sequências.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code>: concatena duas sequências;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code>: repete uma sequência diversas vezes;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">in</span></code>: verifica se um item está ou não em uma sequência;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code>: verifica se um item <strong>não está</strong> em uma sequência.</p></li>
+</ul>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pares</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">vogais</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="s1">&#39;u&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pares</span><span class="o">+</span><span class="n">vogais</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">vogais</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="ow">in</span> <span class="n">pares</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">vogais</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Exercícios</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.beecrowd.com.br/judge/pt/problems/view/3300">Beecrowd 3300 - Números Má Sorte Recarregados</a></p></li>
+<li><p><a class="reference external" href="https://www.beecrowd.com.br/judge/pt/problems/view/2242">Beecrowd 2242 - Huaauhahhuahau</a></p></li>
+</ul>
+</div>
+<div class="section" id="operacoes-especificas">
+<h2>Operações específicas<a class="headerlink" href="#operacoes-especificas" title="Permalink to this headline">¶</a></h2>
+<p>Outros métodos sobre <em>strings</em> podem ser conferidos na tabela apresentada a seguir. Todos os métodos disponíveis podem ser consultados na API da linguagem.<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">PYTHON. Built-in methods: string methods</a>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.capitalize()</span></code>: converte a primeira letra para maiúscula;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.lower()</span></code>: converte as letras para minúsculas;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.upper()</span></code>: converte as letras para maiúsculas;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.islower()</span></code>: verifica se todos os caracteres são letras minúsculas;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.isupper()</span></code>: verifica se todas os caracteres são letras maiúsculas;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.split()</span></code>: divide em várias outras <em>strings</em>, de acordo com algum caractere de separação;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.find(b)</span></code>: retorna a posição <em>string</em> <code class="docutils literal notranslate"><span class="pre">a</span></code> aparece;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.replace(a,</span> <span class="pre">b)</span></code>: substitui na <em>string</em> as <em>substrings</em> <code class="docutils literal notranslate"><span class="pre">a</span></code> por <code class="docutils literal notranslate"><span class="pre">b</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.strip()</span></code>: remove espaços existentes no início e fim da <em>string</em>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.format()</span></code>: formata a <em>string</em>, podendo realizar substituição de variáveis.</p></li>
+</ul>
+<p><strong>Exemplos</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">frase</span><span class="o">=</span><span class="s1">&#39;  um EXEMPLO interessante.  &#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">islower</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">isupper</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;inter&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;inter&#39;</span><span class="p">,</span><span class="s1">&#39;estr&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">frase</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+<span class="n">valor1</span><span class="p">,</span> <span class="n">valor2</span><span class="p">,</span> <span class="n">soma</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">30</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A soma de </span><span class="si">{}</span><span class="s1"> e </span><span class="si">{}</span><span class="s1"> é </span><span class="si">{}</span><span class="s1">.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">valor1</span><span class="p">,</span> <span class="n">valor2</span><span class="p">,</span> <span class="n">soma</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Atividade</strong></p>
+<ul class="simple">
+<li><p>Execute os exemplos apresentados acima.</p></li>
+</ul>
+</div>
+<div class="section" id="formatacao">
+<h2>Formatação<a class="headerlink" href="#formatacao" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="substituicao">
+<h3>Substituição<a class="headerlink" href="#substituicao" title="Permalink to this headline">¶</a></h3>
+<p>O método <code class="docutils literal notranslate"><span class="pre">.format()</span></code> merece destaque aqui. Com ele, é possível utilizar o de maneira simplificada a apresentação de informações. Neste, o local em que os dados serão incluídos é marcado com <code class="docutils literal notranslate"><span class="pre">{}</span></code>, e os valores a serem inseridos, na ordem, são passados como parâmetro ao método <code class="docutils literal notranslate"><span class="pre">.format()</span></code>.</p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="o">=</span><span class="mi">6</span>
+<span class="n">q</span><span class="o">=</span><span class="n">v</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">c</span><span class="o">=</span><span class="n">v</span><span class="o">**</span><span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="s1">&#39;ao quadrado é igual a&#39;</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="s1">&#39;, e&#39;</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="s1">&#39;ao cubo é igual a&#39;</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1"> ao quadrado é igual a </span><span class="si">{}</span><span class="s1"> , e </span><span class="si">{}</span><span class="s1"> ao cubo é igual a </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Atividade</strong></p>
+<ul class="simple">
+<li><p>Execute o exemplo.</p></li>
+</ul>
+<p>Outra forma de de fomatação é adicionar <code class="docutils literal notranslate"><span class="pre">f</span></code> ao início da <em>string</em>, e os valores pode ser informados diretamente no local onde deverão aparecer.</p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s1"> ao quadrado é igual a </span><span class="si">{</span><span class="n">q</span><span class="si">}</span><span class="s1"> , e </span><span class="si">{</span><span class="n">v</span><span class="si">}</span><span class="s1"> ao cubo é igual a </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Atividade</strong></p>
+<ul class="simple">
+<li><p>Execute o exemplo.</p></li>
+</ul>
+<p>Outra maneira é nomear o argumento na <em>string</em>. Com isso, a ordem dos parâmetros no momento de informar pode variar.</p>
+<p><strong>Exemplo</strong></p>
+<ul class="simple">
+<li><p>Observe que independente da ordem dos parâmetros, a saída é idêntica</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{dia}</span><span class="s1"> de </span><span class="si">{mes}</span><span class="s1"> de </span><span class="si">{ano}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">dia</span><span class="o">=</span><span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="n">mes</span><span class="o">=</span><span class="s1">&#39;abril&#39;</span><span class="p">,</span> <span class="n">ano</span><span class="o">=</span><span class="s1">&#39;2005&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{dia}</span><span class="s1"> de </span><span class="si">{mes}</span><span class="s1"> de </span><span class="si">{ano}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ano</span><span class="o">=</span><span class="s1">&#39;2005&#39;</span><span class="p">,</span> <span class="n">dia</span><span class="o">=</span><span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="n">mes</span><span class="o">=</span><span class="s1">&#39;abril&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="espaco-do-valor">
+<h3>Espaço do valor<a class="headerlink" href="#espaco-do-valor" title="Permalink to this headline">¶</a></h3>
+<p>Outra possibilidade é especificar qual o tamanho do espaço que o valor deve ocupar.</p>
+<p><strong>Exemplo</strong></p>
+<ul class="simple">
+<li><p>A <em>string</em> deve ocupar o espaço de no mínimo 7 caracteres:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-</span><span class="si">{:7}</span><span class="s1">-&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-</span><span class="si">{:7}</span><span class="s1">-&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;paralelepípedo&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Exemplo</strong></p>
+<ul class="simple">
+<li><p>A <em>string</em> deve ocupar o espaço de no máximo 7 caracteres, truncando os caracteres no espaço.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-</span><span class="si">{:.7}</span><span class="s1">-&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-</span><span class="si">{:.7}</span><span class="s1">-&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;paralelepípedo&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Atividade</strong></p>
+<ul class="simple">
+<li><p>Execute os exemplos e observe as diferenças.</p></li>
+</ul>
+</div>
+<div class="section" id="alinhamento">
+<h3>Alinhamento<a class="headerlink" href="#alinhamento" title="Permalink to this headline">¶</a></h3>
+<p>Também é possível especificar o alinhamento. À esquerda, centralizado ou à direita.<br />
+<strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-</span><span class="si">{:7}</span><span class="s1">-&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">))</span>  <span class="c1">#padrão</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-</span><span class="si">{:&lt;7}</span><span class="s1">-&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">))</span> <span class="c1">#à esquerda</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-</span><span class="si">{:^7}</span><span class="s1">-&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">))</span> <span class="c1">#centralizado</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-</span><span class="si">{:&gt;7}</span><span class="s1">-&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">))</span> <span class="c1">#à direita</span>
+</pre></div>
+</div>
+<p>Também possível truncar, definir o espaço e alinhar simultaneamente.</p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-</span><span class="si">{:&gt;7.5}</span><span class="s1">-&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;paralelepípedo&#39;</span><span class="p">))</span> <span class="c1">#espaço de 7 caracteres, truncando em 5 e alinhando à direita</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="tipos-de-dados">
+<h3>Tipos de dados<a class="headerlink" href="#tipos-de-dados" title="Permalink to this headline">¶</a></h3>
+<p>Na formatação de <em>strings</em> também é possível manipular como determinados tipos de dados aparecem.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>código</p></th>
+<th class="text-align:left head"><p>significado</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">:d</span></code></p></td>
+<td class="text-align:left"><p>int</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">:+d</span></code></p></td>
+<td class="text-align:left"><p>int com sinal</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">:=+nd</span></code></p></td>
+<td class="text-align:left"><p>Sinal no início do espaço de tamanho <code class="docutils literal notranslate"><span class="pre">n</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">:f</span></code></p></td>
+<td class="text-align:left"><p>float</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">:.nf</span></code></p></td>
+<td class="text-align:left"><p>float com precisão <code class="docutils literal notranslate"><span class="pre">n</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">:+.nf</span></code></p></td>
+<td class="text-align:left"><p>float com sinal e precisão <code class="docutils literal notranslate"><span class="pre">n</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Exemplo</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:d</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">42</span><span class="p">))</span>   <span class="c1">#42</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">-</span><span class="mi">42</span><span class="p">))</span>  <span class="c1">#-42</span>
+</pre></div>
+</div>
+<p><strong>Exemplo</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:+d</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:+d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">42</span><span class="p">))</span>   <span class="c1">#+42</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:+d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">-</span><span class="mi">42</span><span class="p">))</span>  <span class="c1">#-42</span>
+</pre></div>
+</div>
+<p><strong>Exemplo</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:=+nd</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:=+5d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">42</span><span class="p">))</span>       <span class="c1">#+  42</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:=+5d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">-</span><span class="mi">42</span><span class="p">))</span>      <span class="c1">#-  42</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:=+5d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">123456</span><span class="p">))</span>   <span class="c1">#+123456</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:=+5d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">-</span><span class="mi">123456</span><span class="p">))</span>  <span class="c1">#-123456</span>
+</pre></div>
+</div>
+<p><strong>Exemplo</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">:f</span></code>, <code class="docutils literal notranslate"><span class="pre">:.nf</span></code> e <code class="docutils literal notranslate"><span class="pre">:+.nf</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">0.45678</span><span class="p">))</span>    <span class="c1">#0.456780</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">0.45678</span><span class="p">))</span>  <span class="c1">#0.46</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:+.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">0.45678</span><span class="p">))</span> <span class="c1">#+0.46</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- Observe que os valores são arredondados.
+</pre></div>
+</div>
+</div>
+<div class="section" id="substituicoes-aninhadas">
+<h3>Substituições aninhadas<a class="headerlink" href="#substituicoes-aninhadas" title="Permalink to this headline">¶</a></h3>
+<p>Pode-se aplicar substituições dentro do espaço das substituições.</p>
+<p><strong>Exemplo</strong></p>
+<ul class="simple">
+<li><p>O alinhamento e o espaço são informados por parâmetro</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;_{:</span><span class="si">{}{}</span><span class="s1">}_&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;^&#39;</span><span class="p">,</span> <span class="s1">&#39;10&#39;</span><span class="p">))</span> <span class="c1">#_  hello   _</span>
+</pre></div>
+</div>
+<p>Substituições também podem ser utilizadas múltiplas vezes.</p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;{:.</span><span class="si">{prec}</span><span class="s1">} = {:.</span><span class="si">{prec}</span><span class="s1">f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">,</span> <span class="mf">3.141592653</span><span class="p">,</span> <span class="n">prec</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span> <span class="c1">#Val = 3.142</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- Observe que o espaço da palavra `valor` e a precisão do número estão indicados no mesmo parâmetro
+</pre></div>
+</div>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;Valor do pi&#39;</span>
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.141592653</span>
+<span class="n">pre</span> <span class="o">=</span> <span class="mi">3</span>   <span class="c1">#precisao do valor e </span>
+<span class="n">esp</span> <span class="o">=</span> <span class="mi">7</span>   <span class="c1">#número de caracteres</span>
+<span class="n">ali</span> <span class="o">=</span> <span class="s1">&#39;&gt;&#39;</span> <span class="c1">#alinhamento à direita</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;_{:</span><span class="si">{a}{e}</span><span class="s1">.</span><span class="si">{p}</span><span class="s1">} = {:.</span><span class="si">{p}</span><span class="s1">f}_&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">pre</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">ali</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="n">esp</span><span class="p">))</span> <span class="c1">#Val = 3.142</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- Repare que o alinhamento, a precisão e o espaço destinada aos caracteres são especificados anteriormente, em substituições dentro da substituição
+</pre></div>
+</div>
+</div>
+<div class="section" id="separacao">
+<h3>Separação<a class="headerlink" href="#separacao" title="Permalink to this headline">¶</a></h3>
+<p>Outro método das <em>string</em> que merece destaque é o <code class="docutils literal notranslate"><span class="pre">.split()</span></code>. Com ele, é possível dividir a sentença em diversas partes. O resultado é uma lista em que cada posição da lista consta uma parte da <em>string</em>, dividida pela <em>string</em> informada via parâmetro.</p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span> <span class="o">=</span> <span class="s1">&#39;Python é uma linguagem de programação. É interpretada e orientada a objetos&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="o">.</span><span class="n">split</span><span class="p">())</span> <span class="c1">#separação padrão, utilizando espaços</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">))</span> <span class="c1">#separação das frases, pelo .</span>
+</pre></div>
+</div>
+<p>Com isto, é possível obter apenas trechos ou palavras desejadas.</p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span>    <span class="o">=</span> <span class="s1">&#39;Python é uma linguagem de programação. É interpretada e orientada a objetos&#39;</span>
+<span class="n">palavras</span> <span class="o">=</span> <span class="n">texto</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="c1">#Separa pelo espaço</span>
+<span class="n">de</span>  <span class="o">=</span> <span class="mi">2</span>
+<span class="n">ate</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Palavra na posição&#39;</span><span class="p">,</span><span class="n">ate</span><span class="p">,</span><span class="s1">&#39;       :&#39;</span><span class="p">,</span> <span class="n">palavras</span><span class="p">[</span><span class="n">ate</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Palavras nas posições&#39;</span><span class="p">,</span><span class="n">de</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="n">ate</span><span class="p">,</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">palavras</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="n">ate</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Palavras nas posições </span><span class="si">{ini}</span><span class="s1"> a </span><span class="si">{fim}</span><span class="s1"> : </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">palavras</span><span class="p">[</span><span class="n">de</span><span class="p">:</span><span class="n">ate</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">ini</span><span class="o">=</span><span class="n">de</span><span class="p">,</span><span class="n">fim</span><span class="o">=</span><span class="n">ate</span> <span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Palavras nas posições </span><span class="si">{</span><span class="n">de</span><span class="si">}</span><span class="s1"> a </span><span class="si">{</span><span class="n">ate</span><span class="si">}</span><span class="s1"> : </span><span class="si">{</span><span class="n">palavras</span><span class="p">[</span><span class="n">de</span><span class="p">:</span><span class="n">ate</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Exercícios</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.beecrowd.com.br/judge/pt/problems/view/2234">Beecrowd 2234 - Cachorros-Quentes</a></p></li>
+<li><p><a class="reference external" href="https://www.beecrowd.com.br/judge/pt/problems/view/2311">Beecrowd 2311 - Saltos Ornamentais</a></p></li>
+</ul>
+</div>
+<div class="section" id="fatiamento">
+<h3>Fatiamento<a class="headerlink" href="#fatiamento" title="Permalink to this headline">¶</a></h3>
+<p>Em <em>strings</em> é possível aplicar o fatiamento, visto que são estruturas de sequências. Para tal, basta informar o intervalo inicial e final dos caracteres que se deseja acessar.</p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">texto</span> <span class="o">=</span> <span class="s1">&#39;Python é uma linguagem de programação. É interpretada e orientada a objetos&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">20</span><span class="p">])</span> <span class="c1">#Mostra do caractere na posição 10 ao da 19.</span>
+                    <span class="c1">#Observe que é o valor final -1</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>   <span class="c1">#Mostra os caracteres nas posições 0 a 4</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">[</span><span class="mi">10</span><span class="p">:])</span>   <span class="c1">#Mostra os caracteres da posição 10 em diante. </span>
+                    <span class="c1">#Observe que o valor final não é informado</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">texto</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>   <span class="c1">#Mostra do início até o caractere na posição 9. </span>
+                    <span class="c1">#Observe que o valor inicial (0) foi omitido.</span>
+</pre></div>
+</div>
+<p><strong>Exercícios</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.beecrowd.com.br/judge/pt/problems/view/2241">Beecrowd 1241 - Encaixa ou Não II</a> &lt;- Resolver utilizando fatiamento</p></li>
+<li><p><a class="reference external" href="https://www.beecrowd.com.br/judge/pt/problems/view/3358">Beecrowd 3358 - Sobrenome não é fácil</a></p></li>
+<li><p><a class="reference external" href="https://www.beecrowd.com.br/judge/pt/problems/view/2714">Beecrowd 2714 - Minha Senha Provisória</a></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="referencias">
+<h2>Referências<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
+<p>VELOSO, P., SANTOS, C. Estruturas de Dados. Editora Campus, 4. ed. Rio de Janeiro: 1986.</p>
+<p><strong>Outros materiais</strong></p>
+<p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#string-methods">PYTHON. Built-in methods: string methods.</a><br />
+<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range">PYTHON. Built-in types: sequence types.</a><br />
+<a class="reference external" href="https://docs.python.org/3/library/string.html#format-string-syntax">PYTHON. String - common string operations: format string syntax.</a></p>
+<p><a class="reference external" href="https://www.caelum.com.br/apostila-python-orientacao-objetos/estrutura-de-dados/">CAELUM. Python e orientação a objetos.</a><br />
+<a class="reference external" href="http://www.devfuria.com.br/python/sequencias-fatiamento/">DEVFURIA. Python - Operadores e fatiamento de sequências.</a><br />
+<a class="reference external" href="https://pyformat.info">PETRI, U; GUTMANN, H. PyFormat: Using % and .format() for great good!</a></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/02-Python/05-Estruturas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="02-Listas.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Listas</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="04-Tuplas.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tuplas</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      De Darlon Vasata<br/>
+    
+        &copy; direito autoral 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

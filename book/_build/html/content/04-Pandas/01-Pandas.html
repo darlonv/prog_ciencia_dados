@@ -1,0 +1,978 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pandas &#8212; Programação para Ciência de Dados</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Programação para Ciência de Dados</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Pesquise este livro ..." aria-label="Pesquise este livro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Curso
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Planejamento.html">
+   Planejamento
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-Intro/01-Intro.html">
+   Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/01-Intro/01-A_Linguagem.html">
+     A linguagem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/01-Intro/02-Operadores.html">
+     Expressões
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/01-Intro/03-Identificadores.html">
+     Identificadores
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/01-Intro/04-Tipos_de_variaveis.html">
+     Tipos de variáveis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/02-Selecao/01-if.html">
+     If
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/02-Selecao/02-elif.html">
+     elif
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/03-Repeticao/01-Repeticao.html">
+     Estruturas de repetição
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/03-Repeticao/02-For.html">
+     For
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/03-Repeticao/03-While.html">
+     While
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/04-Funcoes/01-Funcoes.html">
+     Funções
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/04-Funcoes/02-Escopo.html">
+     Escopo de variáveis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/05-Estruturas/01-Sequencias.html">
+     Sequências
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/05-Estruturas/02-Listas.html">
+     Listas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/05-Estruturas/03-Strings.html">
+     <em>
+      Strings
+     </em>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/05-Estruturas/04-Tuplas.html">
+     Tuplas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/05-Estruturas/05-Conjuntos.html">
+     Conjuntos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/05-Estruturas/06-Dicionarios.html">
+     Dicionários
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/08-Arquivos/01-Arquivos.html">
+     Arquivos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/08-Arquivos/02-Texto.html">
+     Arquivos texto
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/08-Arquivos/03-csv.html">
+     CSV
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/08-Arquivos/04-json.html">
+     JSON
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/08-Arquivos/05-xml.html">
+     XML
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/08-Arquivos/06-Serializacao_binario.html">
+     Serialização e arquivos binários
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/09-Funcoes_especiais/01-Iterators_e_generators.html">
+     Iterators e generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/09-Funcoes_especiais/02-Comprehensions.html">
+     Comprehensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/09-Funcoes_especiais/03-Enumerate_e_zip.html">
+     Enumerate e Zip
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/09-Funcoes_especiais/04-Funcoes_lambda.html">
+     Map e funções lambda
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Alternar de navegação" aria-controls="site-navigation"
+                title="Alternar de navegação" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Baixe esta página"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/04-Pandas/01-Pandas.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Baixar arquivo fonte" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir em PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo tela cheia"
+        title="Modo tela cheia"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/04-Pandas/01-Pandas.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lançamento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Conteúdo
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#series">
+   Series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operacoes-sobre-todos-os-valores">
+   Operações sobre todos os valores
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataframe">
+   DataFrame
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selecao-de-colunas">
+   Seleção de colunas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#colunas-de-dataframes-como-series">
+   Colunas de DataFrames como Series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selecao-de-linhas">
+   Seleção de linhas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#amostras-das-linhas-do-dataframe">
+   Amostras das linhas do Dataframe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ordenacao">
+   Ordenação
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#utilizando-series-como-indices">
+   Utilizando Series como índices
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#carregando-e-salvando-bases-de-dados">
+   Carregando e salvando bases de dados
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercicio">
+   Exercício
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   Referências
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#outros-materiais">
+     Outros materiais
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Pandas</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Conteúdo </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#series">
+   Series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operacoes-sobre-todos-os-valores">
+   Operações sobre todos os valores
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dataframe">
+   DataFrame
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selecao-de-colunas">
+   Seleção de colunas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#colunas-de-dataframes-como-series">
+   Colunas de DataFrames como Series
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#selecao-de-linhas">
+   Seleção de linhas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#amostras-das-linhas-do-dataframe">
+   Amostras das linhas do Dataframe
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ordenacao">
+   Ordenação
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#utilizando-series-como-indices">
+   Utilizando Series como índices
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#carregando-e-salvando-bases-de-dados">
+   Carregando e salvando bases de dados
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercicio">
+   Exercício
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   Referências
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#outros-materiais">
+     Outros materiais
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="pandas">
+<h1>Pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h1>
+<p>Pandas é uma biblioteca para análise e manipulação de dados amplamente utilizada. Com ela, é possível operar sobre dados de maneira organizada.</p>
+<p>Na API da biblioteca é possível acessar todas as operações disponíveis.<br />
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/index.html">API</a></p>
+<p>Para importar a biblioteca:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+<p>A bibioteca Pandas é composta por dois tipos de dados principais, as <strong>Series</strong> e os <strong>Dataframes</strong>.</p>
+<div class="section" id="series">
+<h2>Series<a class="headerlink" href="#series" title="Permalink to this headline">¶</a></h2>
+<p>Uma Series opera da mesma maneira que um <em>array</em> unidimensional. Cada elemento presente na Series possui um <em>index</em> (índice), que funciona como um rótulo para cada elemento.</p>
+<p><strong>Exemplo</strong></p>
+<p>Utilizaremos como exemplo uma Series para armazenar as alturas de um determinado grupo de pessoas.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alturas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">175</span><span class="p">,</span><span class="mi">182</span><span class="p">,</span><span class="mi">160</span><span class="p">,</span><span class="mi">156</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Observe também o tipo de dado utilizado, utilizando a função <code class="docutils literal notranslate"><span class="pre">type()</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">alturas</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Observe os valores armazenados na Series, com a função <code class="docutils literal notranslate"><span class="pre">print()</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">alturas</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Repare na saída do comando que a primeira coluna apresenta o <em>index</em>, e a segunda coluna os valores inseridos.</p>
+<p>Na Series <code class="docutils literal notranslate"><span class="pre">alturas</span></code>, não foi especificado qual seria o <em>index</em> utilizado. Por padrão, é utilizado uma sequência de números inteiros positivos crescente, iniciada pelo valor <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>Podemos obter essas informações de maneira separada. Para acessar os <strong>valores</strong>, pode-se utilizar o atributo <code class="docutils literal notranslate"><span class="pre">values</span></code>.</p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alturas</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+<p>E para obter os <strong>índices</strong>, pode-se utilizar o atributo <code class="docutils literal notranslate"><span class="pre">index</span></code>.</p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alturas</span><span class="o">.</span><span class="n">index</span>
+</pre></div>
+</div>
+<p>Supondo que gostaríamos de adicionar como índice o nome das pessoas a que cada altura corresponde, pode ser utilizado o parâmetro <code class="docutils literal notranslate"><span class="pre">index</span></code> na criação da Series.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alturas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">175</span><span class="p">,</span> <span class="mi">182</span><span class="p">,</span><span class="mi">160</span><span class="p">,</span><span class="mi">156</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Maria&quot;</span><span class="p">,</span> <span class="s2">&quot;José&quot;</span><span class="p">,</span> <span class="s2">&quot;Eduarda&quot;</span><span class="p">,</span> <span class="s2">&quot;Sergio&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Agora, observe os <strong>valores</strong> da Series <code class="docutils literal notranslate"><span class="pre">altura</span></code> e os <strong>índices</strong> utilizados.</p>
+<p>Utilizando as Series, é possível que os dados sejam acessados a partir de seu índice.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alturas</span><span class="p">[</span><span class="s2">&quot;Eduarda&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Uma Series possibilita que dados estatísticos básicos sejam calculados a partir de seus dados, diretamente com a chamada de métodos.</p>
+<p><strong>Exemplo</strong></p>
+<p>Para mostrar o número de elementos</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alturas</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Alguns métodos que também podem ser utilizados:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">.count()</span></code> - número de elementos</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.mean()</span></code> - média</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.std()</span></code> - desvio padrão</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.min()</span></code> - valor mínimo</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.max()</span></code> - valor máximo</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.value_counts()</span></code> - mostra quantas vezes aparece cada um dos elementos</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.unique()</span></code> - mostra os elementos existentes, sem repetições</p></li>
+</ul>
+<p><strong>Atividade</strong></p>
+<ul class="simple">
+<li><p>Qual é a altura média das pessoas?</p></li>
+</ul>
+<p>É possível observar todos esses valores de uma única vez, utilizando o método <code class="docutils literal notranslate"><span class="pre">.describe()</span></code></p>
+</div>
+<div class="section" id="operacoes-sobre-todos-os-valores">
+<h2>Operações sobre todos os valores<a class="headerlink" href="#operacoes-sobre-todos-os-valores" title="Permalink to this headline">¶</a></h2>
+<p>Em uma Series, é possível aplicar operações matemáticas sobre todos os valores de uma única vez.</p>
+<p><strong>Exemplo</strong></p>
+<p>Para converter a altura de centímetros para metros, basta dividir os valores por 100.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alturas</span><span class="o">/</span><span class="mi">100</span>
+</pre></div>
+</div>
+<p>A series não é afetada. Para tornar o resultado permamente, é necessário salvar o valor.</p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">alturasMetros</span> <span class="o">=</span> <span class="n">alturas</span><span class="o">/</span><span class="mi">100</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Alturas em metros:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">alturasMetros</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Alturas em centímetros:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">alturas</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Atividade</strong></p>
+<p>Crie a Series apresentada abaixo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">conceitos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span>
+    <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;D&#39;</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;C&#39;</span><span class="p">,</span><span class="s1">&#39;A&#39;</span><span class="p">],</span>
+    <span class="n">index</span><span class="o">=</span>
+    <span class="p">[</span><span class="s1">&#39;Maria&#39;</span><span class="p">,</span> <span class="s1">&#39;José&#39;</span><span class="p">,</span> <span class="s1">&#39;Eduarda&#39;</span><span class="p">,</span> <span class="s1">&#39;Sofia&#39;</span><span class="p">,</span> <span class="s1">&#39;Sergio&#39;</span><span class="p">,</span> <span class="s1">&#39;Baltazar&#39;</span><span class="p">,</span> <span class="s1">&#39;Oswaldo&#39;</span><span class="p">,</span> <span class="s1">&#39;Joana&#39;</span><span class="p">,</span> <span class="s1">&#39;Felisberto&#39;</span><span class="p">,</span> <span class="s1">&#39;Brigite&#39;</span><span class="p">,</span> <span class="s1">&#39;Filomena&#39;</span><span class="p">,</span> <span class="s1">&#39;Natalicio&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Sobre a Series <code class="docutils literal notranslate"><span class="pre">conceitos</span></code>, responda:</p>
+<ul class="simple">
+<li><p>Quantos conceitos existem?</p></li>
+</ul>
+<ul class="simple">
+<li><p>Quais são os conceitos diferentes que estão armazenados?</p></li>
+</ul>
+<ul class="simple">
+<li><p>Quantos valores existem de cada conceito?</p></li>
+</ul>
+<ul class="simple">
+<li><p>Qual é o conceito da aluna ‘Sofia’?</p></li>
+</ul>
+</div>
+<div class="section" id="dataframe">
+<h2>DataFrame<a class="headerlink" href="#dataframe" title="Permalink to this headline">¶</a></h2>
+<p>O DataFrame é uma das principais estruturas do Pandas. É composto por uma estrutura bidimensional, que em sua apresentação se assemelha a uma planilha. Um Dataframe é formado por diversas Series, que compartilham um mesmo índice.</p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pessoas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;Nome&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Maria&quot;</span><span class="p">,</span> <span class="s2">&quot;José&quot;</span><span class="p">,</span> <span class="s2">&quot;Eduarda&quot;</span><span class="p">,</span> <span class="s2">&quot;Sergio&quot;</span><span class="p">,</span> <span class="s2">&quot;Julia&quot;</span><span class="p">,</span> <span class="s1">&#39;Baltazar&#39;</span><span class="p">,</span> <span class="s1">&#39;Sofia&#39;</span><span class="p">],</span>
+                        <span class="s1">&#39;Altura&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">175</span><span class="p">,</span> <span class="mi">182</span><span class="p">,</span><span class="mi">160</span><span class="p">,</span><span class="mi">156</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">158</span><span class="p">,</span> <span class="mi">175</span><span class="p">],</span>
+                        <span class="s1">&#39;Idade&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">21</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">29</span><span class="p">],</span> 
+                        <span class="s1">&#39;Sexo&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">]</span>
+                        <span class="p">})</span>
+</pre></div>
+</div>
+<p>Para observar o dataframe:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pessoas</span>
+</pre></div>
+</div>
+<p>É possível observar diversas informações sobre o DataFrame, utilizando o método <code class="docutils literal notranslate"><span class="pre">.info()</span></code>. O número de colunas, número de linhas, quantidades de valores não-nulos presentes em cada coluna e a quantidade de memória utilizada pelo DataFrame podem ser observados com esse método.</p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pessoas</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Cada coluna pode possuir seu tipo de dado, que pode ser visto acessando o atributo <code class="docutils literal notranslate"><span class="pre">.dtypes</span></code>, acrônimo de <em>data types</em>.</p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pessoas</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+</div>
+<p>As estatísticas de cada coluna, assim como na Series, podem ser obtidas com o método <code class="docutils literal notranslate"><span class="pre">.describe()</span></code>.</p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pessoas</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>Atividade</strong></p>
+<ul class="simple">
+<li><p>Para pensar:</p>
+<ul>
+<li><p>Por que não aparecem as colunas com os dados de <em>Nome</em> e <em>Sexo</em> na saída do método <code class="docutils literal notranslate"><span class="pre">describe()</span></code>?</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="selecao-de-colunas">
+<h2>Seleção de colunas<a class="headerlink" href="#selecao-de-colunas" title="Permalink to this headline">¶</a></h2>
+<p>A identificação de cada coluna pode ser utilizada para acessar os dados de colunas específicas, como se fosse uma ‘posição’.</p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pessoas</span><span class="p">[</span><span class="s1">&#39;Nome&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Observe o tipo dado que é retornado:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">pessoas</span><span class="p">[</span><span class="s1">&#39;Nome&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Perceba que selecionar uma única coluna retorna uma <strong>Series</strong>.</p>
+<p>Também é possível observar mais de uma coluna de um dataframe, mostrando apenas as colunas desejadas.</p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pessoas</span><span class="p">[[</span><span class="s1">&#39;Nome&#39;</span><span class="p">,</span> <span class="s1">&#39;Altura&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p>Observe que passar obter mais de uma coluna, como índice para o Dataframe é passado uma <strong>lista</strong> de valores.</p>
+<p>Observe o tipo dado que é retornado:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">pessoas</span><span class="p">[[</span><span class="s1">&#39;Nome&#39;</span><span class="p">,</span> <span class="s1">&#39;Altura&#39;</span><span class="p">]])</span>
+</pre></div>
+</div>
+<p>Perceba que observar várias colunas retorna um <strong>DataFrame</strong>.</p>
+<p><strong>Atividade</strong></p>
+<p>Execute os códigos 1 e 2 abaixo, compare-os e explique as diferenças, respondendo:
+- os dados são os mesmos?
+- as estruturas retornadas possuem o mesmo tipo de dado?
+- Por quê?
+- Qual é a diferença na escolha de colunas a serem mostradas?</p>
+<p>Código 1:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pessoas</span><span class="p">[</span><span class="s1">&#39;Nome&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Código 2:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pessoas</span><span class="p">[[</span><span class="s1">&#39;Nome&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="colunas-de-dataframes-como-series">
+<h2>Colunas de DataFrames como Series<a class="headerlink" href="#colunas-de-dataframes-como-series" title="Permalink to this headline">¶</a></h2>
+<p>Ao selecionar uma única coluna temos uma Series, e seus atributos podem ser aplicados.</p>
+<p><strong>Exemplo</strong></p>
+<p>Para observar a quantidade de pessoas de cada sexo</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pessoas</span><span class="p">[</span><span class="s1">&#39;Sexo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="selecao-de-linhas">
+<h2>Seleção de linhas<a class="headerlink" href="#selecao-de-linhas" title="Permalink to this headline">¶</a></h2>
+<p>Uma outra forma de selecionar elementos é utilizando os índices (linhas) como referência, utilizando o método <code class="docutils literal notranslate"><span class="pre">.loc[]</span></code></p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pessoas</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">2</span><span class="p">]]</span>
+<span class="n">pessoas</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]]</span>
+<span class="n">pessoas</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Neste caso, utilizou o <strong>conteúdo</strong> do índice como referência.</p>
+<p>Pode-se também obter a partir o índice da posição, com o método <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code>.</p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pessoas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">2</span><span class="p">]]</span>
+<span class="n">pessoas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]]</span>
+<span class="n">pessoas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Para este exemplo, como os índices são numéricos, não há diferença nos resultados.</p>
+<p><strong>Atividade</strong></p>
+<ul class="simple">
+<li><p>Explique cada parâmetro passado no método <code class="docutils literal notranslate"><span class="pre">.iloc[]</span></code> nos exemplos abaixo, em relação com a saída obtida. Compare as diferenças entre eles.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pessoas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pessoas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">2</span><span class="p">]]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pessoas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pessoas</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="amostras-das-linhas-do-dataframe">
+<h2>Amostras das linhas do Dataframe<a class="headerlink" href="#amostras-das-linhas-do-dataframe" title="Permalink to this headline">¶</a></h2>
+<p>Os métodos <code class="docutils literal notranslate"><span class="pre">.head()</span></code> e <code class="docutils literal notranslate"><span class="pre">.tail()</span></code> servem para obter as linhas iniciais ou finais de um DataFrame. Tais métodos são úteis para observar amostras dos dados, principalmente quando tratamos de DataFrames com muitas linhas.</p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pessoas</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Atividade</strong></p>
+<ul class="simple">
+<li><p>Qual é o valor padrão de linhas para o método <code class="docutils literal notranslate"><span class="pre">.head()</span></code>, caso o parâmetro seja omitido?</p></li>
+</ul>
+</div>
+<div class="section" id="ordenacao">
+<h2>Ordenação<a class="headerlink" href="#ordenacao" title="Permalink to this headline">¶</a></h2>
+<p>É possível ordenar os dados por uma coluna específica, utilizando o método <code class="docutils literal notranslate"><span class="pre">.sort_values()</span></code>.</p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pessoas</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Idade&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Observe novamente o Dataframe <code class="docutils literal notranslate"><span class="pre">pessoas</span></code>, e verifique que se os dados continuam ordenados pelo nome.</p>
+<p>Para que a alteração seja permanente, é necessário sobrescrever o Datraframe.</p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pessoas</span> <span class="o">=</span> <span class="n">pessoas</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Idade&#39;</span><span class="p">)</span>
+<span class="n">pessoas</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="utilizando-series-como-indices">
+<h2>Utilizando Series como índices<a class="headerlink" href="#utilizando-series-como-indices" title="Permalink to this headline">¶</a></h2>
+<p>É possível utilizar Series como índices em Dataframes.</p>
+<p><strong>Exemplo</strong></p>
+<p>Observe a saída:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pessoas</span><span class="p">[</span><span class="s1">&#39;Sexo&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;m&#39;</span>
+</pre></div>
+</div>
+<p>Nesta saída o resultado é uma Series composta por valores do tipo <em>boolean</em>. Esta Series pode ser utilizada como índice, em que determinada operação será aplicada apenas aos elementos nas posições em que o índice possua valor <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p><strong>Exemplo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">idx</span><span class="o">=</span><span class="n">pessoas</span><span class="p">[</span><span class="s1">&#39;Sexo&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;m&#39;</span> <span class="c1"># A Series pessoas[&#39;Sexo&#39;] == &#39;m&#39; é armazenada em idx</span>
+<span class="n">homens</span><span class="o">=</span><span class="n">pessoas</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>        <span class="c1"># A Series idx é utilizada como índice, e o DataFrame resultante é salvo como homens</span>
+<span class="n">homens</span>                     <span class="c1"># Mostra o DataFrame Homens</span>
+</pre></div>
+</div>
+<p>Para estas operações, diversos operadores relacionais como <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> ou <code class="docutils literal notranslate"><span class="pre">==</span></code> podem utilizados. Desta forma, estas operações acabam funcionando como um filtro ou máscara, para as opearações aplicadas.</p>
+<p><strong>Atividade</strong></p>
+<ul class="simple">
+<li><p>Filtre o DataFrame pessoas, mostrando apenas as mulheres.</p></li>
+</ul>
+<p><strong>Atividade</strong></p>
+<ul class="simple">
+<li><p>Qual a altura média dos homens?</p></li>
+<li><p>Qual a altura média das mulheres?</p></li>
+<li><p>Quem são as pessoas que possuem altura acima da média (do conjunto de dados)?</p></li>
+</ul>
+</div>
+<div class="section" id="carregando-e-salvando-bases-de-dados">
+<h2>Carregando e salvando bases de dados<a class="headerlink" href="#carregando-e-salvando-bases-de-dados" title="Permalink to this headline">¶</a></h2>
+<p>A biblioteca Pandas possibilita que um DataFrame pode ser carregado a partir de bases já existentes, em diversos formatos, como:</p>
+<ul class="simple">
+<li><p><strong>csv</strong></p>
+<ul>
+<li><p><em>Comma Separated Values</em></p></li>
+<li><p>formato em que os dados estão organizados em linha, e cada campo é separado por vírgula</p></li>
+<li><p>método para carregar</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">.read_csv()</span></code></p>
+<ul>
+<li><p>Parâmetro de entrada pode ser um caminho para arquivo csv local ou uma URL para um arquivo csv, disponível online.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Exemplo</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Carrega um arquivo csv local</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bases/alunos.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- [Documentação](https://pandas.pydata.org/pandas-docs/stable/reference/io.html#flat-file)
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>xls</strong>:</p>
+<ul>
+<li><p>planilha do Microsoft Excel</p></li>
+<li><p>método:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">.read_excel()</span></code></p></li>
+</ul>
+</li>
+<li><p>Exemplo</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Carrega um arquivo xls local</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bases/alunos.xls&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- [Documentação](https://pandas.pydata.org/pandas-docs/stable/reference/io.html#excel)
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>sql</strong></p>
+<ul>
+<li><p>tabelas e resultados de consultas a bancos de dados</p></li>
+<li><p>método para carregar:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">.read_sql_table()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.read_sql_query()</span></code></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/io.html#sql">Documentação</a></p></li>
+</ul>
+</li>
+</ul>
+<p>Para salvar um DataFrame em arquivo para ser carregado posteriormente:</p>
+<ul class="simple">
+<li><p><strong>csv</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">.to_csv()</span></code></p>
+<ul>
+<li><p>Método do DataFrame</p></li>
+</ul>
+</li>
+<li><p>Exemplo</p></li>
+</ul>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#salvando o DataFrame pessoas no diretório local</span>
+<span class="n">pessoas</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;pessoas.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exercicio">
+<h2>Exercício<a class="headerlink" href="#exercicio" title="Permalink to this headline">¶</a></h2>
+<p>Carregue o DataFrame <strong>rioAptos</strong> com informações sobre apartamentos na cidade do Rio de Janeiro. Para carregar, execute:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rioAptos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/mvinoba/notebooks-for-binder/master/dados.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Observe quais são as colunas presentes na base de dados:</p>
+<p>Observe os dados presentes nas primeiras linhas:</p>
+<ul class="simple">
+<li><p>Qual é o valor do apartamento mais barato?</p></li>
+</ul>
+<ul class="simple">
+<li><p>Qual é o valor do apartamento mais caro?</p></li>
+</ul>
+<ul class="simple">
+<li><p>Qual é o valor do metro quadrado mais barato?</p></li>
+</ul>
+<ul class="simple">
+<li><p>Qual é o valor do metro quadrado mais caro?</p></li>
+</ul>
+<ul class="simple">
+<li><p>Em qual bairro está o apartamento mais barato?</p></li>
+</ul>
+<ul class="simple">
+<li><p>Em qual bairro está o apartamento mais caro?</p></li>
+</ul>
+<ul class="simple">
+<li><p>Na base de dados, quantos apartamentos há em cada bairro?</p></li>
+</ul>
+<ul class="simple">
+<li><p>Qual é o tamanho médio dos apartamentos nos seguintes bairros:</p>
+<ul>
+<li><p>Copacabana</p></li>
+<li><p>Botafogo</p></li>
+<li><p>Tijuca</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Quais são os apartamentos com preços acima da média?</p></li>
+</ul>
+<p>Qual a porcentagem de apartamentos em Copacabana que possuem valores acima da média dos demais bairros?</p>
+</div>
+<div class="section" id="referencias">
+<h2>Referências<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://conference.scipy.org/proceedings/scipy2010/pdfs/mckinney.pdf">MCKINNEY, Wes et al. Data structures for statistical computing in python. In: Proceedings of the 9th Python in Science Conference. 2010. p. 51-56.</a></p>
+<div class="section" id="outros-materiais">
+<h3>Outros materiais<a class="headerlink" href="#outros-materiais" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://medium.com/data-hackers/uma-introdu%C3%A7%C3%A3o-simples-ao-pandas-1e15eea37fa1">Data Hackers: Seus primeiros passos como Data Scientist: Introdução ao Pandas</a></p></li>
+<li><p><a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/index.html">Pandas API Reference</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/04-Pandas"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      De Darlon Vasata<br/>
+    
+        &copy; direito autoral 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

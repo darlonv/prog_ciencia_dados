@@ -1,0 +1,928 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemplo de aplicação streamlit &#8212; Programação para Ciência de Dados</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Programação para Ciência de Dados</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Pesquise este livro ..." aria-label="Pesquise este livro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Curso
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Planejamento.html">
+   Planejamento
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01-Intro/01-Intro.html">
+   Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/01-Intro/01-A_Linguagem.html">
+     A linguagem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/01-Intro/02-Operadores.html">
+     Expressões
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/01-Intro/03-Identificadores.html">
+     Identificadores
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/01-Intro/04-Tipos_de_variaveis.html">
+     Tipos de variáveis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/02-Selecao/01-if.html">
+     If
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/02-Selecao/02-elif.html">
+     elif
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/03-Repeticao/01-Repeticao.html">
+     Estruturas de repetição
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/03-Repeticao/02-For.html">
+     For
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/03-Repeticao/03-While.html">
+     While
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/04-Funcoes/01-Funcoes.html">
+     Funções
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/04-Funcoes/02-Escopo.html">
+     Escopo de variáveis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/05-Estruturas/01-Sequencias.html">
+     Sequências
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/05-Estruturas/02-Listas.html">
+     Listas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/05-Estruturas/03-Strings.html">
+     <em>
+      Strings
+     </em>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/05-Estruturas/04-Tuplas.html">
+     Tuplas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/05-Estruturas/05-Conjuntos.html">
+     Conjuntos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/05-Estruturas/06-Dicionarios.html">
+     Dicionários
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/08-Arquivos/01-Arquivos.html">
+     Arquivos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/08-Arquivos/02-Texto.html">
+     Arquivos texto
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/08-Arquivos/03-csv.html">
+     CSV
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/08-Arquivos/04-json.html">
+     JSON
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/08-Arquivos/05-xml.html">
+     XML
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/08-Arquivos/06-Serializacao_binario.html">
+     Serialização e arquivos binários
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/09-Funcoes_especiais/01-Iterators_e_generators.html">
+     Iterators e generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/09-Funcoes_especiais/02-Comprehensions.html">
+     Comprehensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/09-Funcoes_especiais/03-Enumerate_e_zip.html">
+     Enumerate e Zip
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02-Python/09-Funcoes_especiais/04-Funcoes_lambda.html">
+     Map e funções lambda
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Alternar de navegação" aria-controls="site-navigation"
+                title="Alternar de navegação" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Baixe esta página"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/05-Apresentacao/Streamlit_aptos.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Baixar arquivo fonte" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir em PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo tela cheia"
+        title="Modo tela cheia"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/05-Apresentacao/Streamlit_aptos.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lançamento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Conteúdo
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apresenta-base">
+   Apresenta base
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#escolhendo-bairros">
+   Escolhendo bairros
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#escolhendo-mais-de-um-bairro">
+   Escolhendo mais de um bairro
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#versao-04-filtrando-valores">
+   Versão 04 - Filtrando valores
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apresentando-valores-medios">
+   Apresentando valores médios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#valores-medios-em-colunas">
+   Valores médios em colunas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#barra-lateral">
+   Barra lateral
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   Referências
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#outros-materiais">
+     Outros materiais
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Exemplo de aplicação streamlit</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Conteúdo </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apresenta-base">
+   Apresenta base
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#escolhendo-bairros">
+   Escolhendo bairros
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#escolhendo-mais-de-um-bairro">
+   Escolhendo mais de um bairro
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#versao-04-filtrando-valores">
+   Versão 04 - Filtrando valores
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apresentando-valores-medios">
+   Apresentando valores médios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#valores-medios-em-colunas">
+   Valores médios em colunas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#barra-lateral">
+   Barra lateral
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   Referências
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#outros-materiais">
+     Outros materiais
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="exemplo-de-aplicacao-streamlit">
+<h1>Exemplo de aplicação streamlit<a class="headerlink" href="#exemplo-de-aplicacao-streamlit" title="Permalink to this headline">¶</a></h1>
+<p>Neste exemplo, desenvolveremos uma ferramenta que apresenta informações sobre apartamentos no Rio de Janeiro.</p>
+<p>Serão realizadas diversas versões, onde cada uma aprimora a versão anterior.</p>
+<div class="section" id="apresenta-base">
+<h2>Apresenta base<a class="headerlink" href="#apresenta-base" title="Permalink to this headline">¶</a></h2>
+<p>Na primeira versão, apenas leremos a base e a apresentaremos na página.</p>
+<p>Importação de bibliotecas</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Importa bibliotecas</span>
+<span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+<p>Apresentação</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Título na página</span>
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Apartamentos na cidade do Rio de Janeiro&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Carregamento da base</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Carrega a base</span>
+<span class="n">rioAptos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/mvinoba/notebooks-for-binder/master/dados.csv&#39;</span><span class="p">)</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">rioAptos</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Apresentando a base</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Mostra a base</span>
+<span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Código final</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Importa bibliotecas</span>
+<span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+
+<span class="c1">#Título na página</span>
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Apartamentos na cidade do Rio de Janeiro&#39;</span><span class="p">)</span>
+
+<span class="c1">#Carrega a base</span>
+<span class="n">rioAptos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/mvinoba/notebooks-for-binder/master/dados.csv&#39;</span><span class="p">)</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">rioAptos</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1">#Mostra a base</span>
+<span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="escolhendo-bairros">
+<h2>Escolhendo bairros<a class="headerlink" href="#escolhendo-bairros" title="Permalink to this headline">¶</a></h2>
+<p>Nesta versão faremos com que seja possível escolher o bairro, e apresentaremos apenas os apartamentos do bairro escolhido</p>
+<p>Escolhendo bairros<br />
+Incluiremos um radio button, para seleção do bairro.</p>
+<p>Antes de mostrar a base, inclua:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Escolha do bairro</span>
+<span class="n">bairros</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Botafogo&#39;</span><span class="p">,</span><span class="s1">&#39;Tijuca&#39;</span><span class="p">]</span>
+<span class="n">bairro</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">radio</span><span class="p">(</span><span class="s1">&#39;Escolha o bairro&#39;</span><span class="p">,</span> <span class="n">bairros</span> <span class="p">)</span>
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Bairro escolhido:&#39;</span><span class="p">,</span> <span class="n">bairro</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ainda precisamos informar a base que deve mostrar apenas os apartamentos no bairro escolhido. Para isso, podemos filtrar a base:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Filtra de acordo com o bairro escolhido</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;bairro&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">bairro</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Da forma como está implementado até o momento, cada bairro deve ser incluído na lista de escolhas. Faremos com que todos os bairros da base estejam disponíveis para escolha.</p>
+<p>Altere o código na escolha do bairro para:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Escolha do bairro</span>
+<span class="n">bairros</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;bairros&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="c1">#Obtém todos os bairros presentes na base</span>
+<span class="n">bairro</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">radio</span><span class="p">(</span><span class="s1">&#39;Escolha o bairro&#39;</span><span class="p">,</span> <span class="n">bairros</span> <span class="p">)</span>
+<span class="c1"># st.write(&#39;Bairro escolhido:&#39;, bairro) #Esta linha não é mais necessária. A opção escolhida já é visível</span>
+
+<span class="c1">#Filtra de acordo com o bairro escolhido</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;bairro&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">bairro</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Código final</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Importa bibliotecas</span>
+<span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+
+<span class="c1">#Título na página</span>
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Apartamentos na cidade do Rio de Janeiro&#39;</span><span class="p">)</span>
+
+<span class="c1">#Carrega a base</span>
+<span class="n">rioAptos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/mvinoba/notebooks-for-binder/master/dados.csv&#39;</span><span class="p">)</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">rioAptos</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1">#Escolha do bairro</span>
+<span class="n">bairros</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;bairro&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">bairro</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">radio</span><span class="p">(</span><span class="s1">&#39;Escolha o bairro&#39;</span><span class="p">,</span> <span class="n">bairros</span> <span class="p">)</span>
+
+<span class="c1">#Filtra de acordo com o bairro escolhido</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;bairro&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">bairro</span><span class="p">]</span>
+
+<span class="c1">#Mostra a base</span>
+<span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="escolhendo-mais-de-um-bairro">
+<h2>Escolhendo mais de um bairro<a class="headerlink" href="#escolhendo-mais-de-um-bairro" title="Permalink to this headline">¶</a></h2>
+<p>Outra opção além do radio button para seleção o <code class="docutils literal notranslate"><span class="pre">.selectbox()</span></code>. Ele opera da mesma maneira, porém apresenta um menu para escolha.</p>
+<p>Substitua a linha da escolha de bairros:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Escolha do bairro</span>
+<span class="n">bairros</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;bairro&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">bairro</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span><span class="s1">&#39;Escolha o bairro&#39;</span><span class="p">,</span> <span class="n">bairros</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Observe que é o mesmo comportamento.</p>
+<p>Para que possamos escolher diversos apartamentos, utilizaremos o <code class="docutils literal notranslate"><span class="pre">.multiselect()</span></code>, que retorna uma lista com as escolhas. Tendo as escolhas, é necessário filtrar a base utilizando o método <code class="docutils literal notranslate"><span class="pre">.isin()</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Escolha do bairro</span>
+<span class="n">bairros</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;bairro&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">bairro</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">multiselect</span><span class="p">(</span><span class="s1">&#39;Escolha o bairro&#39;</span><span class="p">,</span> <span class="n">bairros</span> <span class="p">)</span> <span class="c1">#Uso do multiselect</span>
+
+<span class="c1">#Filtra de acordo com o bairro escolhido</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;bairro&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">bairro</span><span class="p">)]</span> <span class="c1">#Filtra pelos nomes de bairro que estiverem na lista</span>
+</pre></div>
+</div>
+<p><strong>Código final</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Importa bibliotecas</span>
+<span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+
+<span class="c1">#Título na página</span>
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Apartamentos na cidade do Rio de Janeiro&#39;</span><span class="p">)</span>
+
+<span class="c1">#Carrega a base</span>
+<span class="n">rioAptos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/mvinoba/notebooks-for-binder/master/dados.csv&#39;</span><span class="p">)</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">rioAptos</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1">#Escolha do bairro</span>
+<span class="n">bairros</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;bairro&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">bairro</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">multiselect</span><span class="p">(</span><span class="s1">&#39;Escolha o bairro&#39;</span><span class="p">,</span> <span class="n">bairros</span> <span class="p">)</span> <span class="c1">#Uso do multiselect</span>
+
+<span class="c1">#Filtra de acordo com o bairro escolhido</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;bairro&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">bairro</span><span class="p">)]</span> <span class="c1">#Filtra pelos nomes de bairro que estiverem na lista</span>
+
+<span class="c1">#Mostra a base</span>
+<span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="versao-04-filtrando-valores">
+<h2>Versão 04 - Filtrando valores<a class="headerlink" href="#versao-04-filtrando-valores" title="Permalink to this headline">¶</a></h2>
+<p>Agora aplicaremos um segundo filtro, em que sejam apresentados apenas apartamentos em um uma determinada faixa de valores.</p>
+<p>Para tal, utilizaremos um slider. Após o filtro da base de acordo com a escolha do bairro, inclua:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escolha dos valores</span>
+<span class="n">faixa</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span><span class="s1">&#39;Faixa de valor (R$)&#39;</span><span class="p">,</span> <span class="mi">100000</span><span class="p">,</span> <span class="mi">200000</span><span class="p">,</span> <span class="mi">150000</span><span class="p">)</span> <span class="c1">#Valor inicial e final</span>
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">faixa</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Modifique para haja 2 valores padrão, utilizando uma lista</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escolha dos valores</span>
+<span class="n">faixa</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span><span class="s1">&#39;Faixa de valor (R$)&#39;</span><span class="p">,</span> <span class="mi">100000</span><span class="p">,</span> <span class="mi">200000</span><span class="p">,</span> <span class="p">[</span><span class="mi">140000</span><span class="p">,</span><span class="mi">160000</span><span class="p">])</span> <span class="c1">#Valor inicial e final</span>
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">faixa</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Agora, atualizaremos os possíveis valores a serem escolhidos de acordo os valores existentes na base.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escolha dos valores</span>
+<span class="n">menor</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="c1">#Obtem o menor preço</span>
+<span class="n">maior</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="c1">#Obtem o maior preço</span>
+<span class="n">faixa</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span><span class="s1">&#39;Faixa de valor (R$)&#39;</span><span class="p">,</span> <span class="n">menor</span><span class="p">,</span> <span class="n">maior</span><span class="p">,</span> <span class="p">[</span><span class="n">menor</span><span class="p">,</span><span class="n">maior</span><span class="p">])</span> <span class="c1">#Valor inicial e final</span>
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">faixa</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Finalmente, realizaremos o filtro na base de acordo com os valores selecionados</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escolha dos valores</span>
+<span class="n">menor</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="c1">#Obtem o menor preço</span>
+<span class="n">maior</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="c1">#Obtem o maior preço</span>
+
+<span class="n">faixa</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span><span class="s1">&#39;Faixa de valor (R$)&#39;</span><span class="p">,</span> <span class="n">menor</span><span class="p">,</span> <span class="n">maior</span><span class="p">,</span> <span class="p">[</span><span class="n">menor</span><span class="p">,</span> <span class="n">maior</span><span class="p">])</span> <span class="c1">#Valor inicial e final</span>
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">faixa</span><span class="p">)</span> <span class="c1">#Já pode ser removido</span>
+
+<span class="c1">#Filtra a base pelos valores escolhidos</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">faixa</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="c1">#Apenas preços acima do menor escolhido</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">faixa</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="c1">#Apenas preços abaixo do maior escolhido</span>
+</pre></div>
+</div>
+<p><strong>Código final</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Importa bibliotecas</span>
+<span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+
+<span class="c1">#Título na página</span>
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Apartamentos na cidade do Rio de Janeiro&#39;</span><span class="p">)</span>
+
+<span class="c1">#Carrega a base</span>
+<span class="n">rioAptos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/mvinoba/notebooks-for-binder/master/dados.csv&#39;</span><span class="p">)</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">rioAptos</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1">#Escolha do bairro</span>
+<span class="n">bairros</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;bairro&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">bairro</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">multiselect</span><span class="p">(</span><span class="s1">&#39;Escolha o bairro&#39;</span><span class="p">,</span> <span class="n">bairros</span> <span class="p">)</span>
+
+<span class="c1">#Filtra de acordo com o bairro escolhido</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;bairro&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">bairro</span><span class="p">)]</span>
+
+<span class="c1"># Escolha dos valores</span>
+<span class="n">menor</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="c1">#Obtem o menor preço</span>
+<span class="n">maior</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="c1">#Obtem o maior preço</span>
+
+<span class="n">faixa</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span><span class="s1">&#39;Faixa de valor (R$)&#39;</span><span class="p">,</span> <span class="n">menor</span><span class="p">,</span> <span class="n">maior</span><span class="p">,</span> <span class="p">[</span><span class="n">menor</span><span class="p">,</span> <span class="n">maior</span><span class="p">])</span> <span class="c1">#Valor inicial e final</span>
+
+<span class="c1">#Filtra a base pelos valores escolhidos</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">faixa</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="c1">#Apenas preços acima do menor escolhido</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">faixa</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="c1">#Apenas preços abaixo do maior escolhido</span>
+
+<span class="c1">#Mostra a base</span>
+<span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="apresentando-valores-medios">
+<h2>Apresentando valores médios<a class="headerlink" href="#apresentando-valores-medios" title="Permalink to this headline">¶</a></h2>
+<p>Nesta versão, destacaremos os valores médios de condomínio, preço e área do apartemento.</p>
+<p>Ao final, utilizaremos <code class="docutils literal notranslate"><span class="pre">.metric()</span></code> para apresentar os valores médios.</p>
+<p>Valor médio do condomínio:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Valor médio do condomínio</span>
+<span class="n">cond_med</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;condominio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">st</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s1">&#39;Valor médio do condomínio (R$)&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">cond_med</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Preço médio:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Preço médio</span>
+<span class="n">preco_med</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">st</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s1">&#39;Preço médio (R$)&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">preco_med</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Área média</span>
+<span class="n">area_med</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">st</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s1">&#39;Área média (M2)&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">area_med</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Código final</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Importa bibliotecas</span>
+<span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1">#Título na página</span>
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Apartamentos na cidade do Rio de Janeiro&#39;</span><span class="p">)</span>
+
+<span class="c1">#Carrega a base</span>
+<span class="n">rioAptos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/mvinoba/notebooks-for-binder/master/dados.csv&#39;</span><span class="p">)</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">rioAptos</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1">#Escolha do bairro</span>
+<span class="n">bairros</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;bairro&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">bairro</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">multiselect</span><span class="p">(</span><span class="s1">&#39;Escolha o bairro&#39;</span><span class="p">,</span> <span class="n">bairros</span> <span class="p">)</span>
+
+<span class="c1">#Filtra de acordo com o bairro escolhido</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;bairro&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">bairro</span><span class="p">)]</span>
+
+<span class="c1"># Escolha dos valores</span>
+<span class="n">menor</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="c1">#Obtem o menor preço</span>
+<span class="n">maior</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="c1">#Obtem o maior preço</span>
+
+<span class="n">faixa</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span><span class="s1">&#39;Faixa de valor&#39;</span><span class="p">,</span> <span class="n">menor</span><span class="p">,</span> <span class="n">maior</span><span class="p">,</span> <span class="p">[</span><span class="n">menor</span><span class="p">,</span> <span class="n">maior</span><span class="p">])</span> <span class="c1">#Valor inicial e final</span>
+
+<span class="c1">#Filtra a base pelos valores escolhidos</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">faixa</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="c1">#Apenas preços acima do menor escolhido</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">faixa</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="c1">#Apenas preços abaixo do maior escolhido</span>
+
+<span class="c1">#Mostra a base</span>
+<span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+
+<span class="c1">#Valores médios</span>
+<span class="c1">#Valor médio do condomínio</span>
+<span class="n">cond_med</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;condominio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">st</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s1">&#39;Valor médio do condomínio (R$)&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">cond_med</span><span class="p">))</span>
+<span class="c1">#Preço médio</span>
+<span class="n">preco_med</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">st</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s1">&#39;Preço médio (R$)&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">preco_med</span><span class="p">))</span>
+<span class="c1">#Área média</span>
+<span class="n">area_med</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">st</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s1">&#39;Área média (M2)&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">area_med</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="valores-medios-em-colunas">
+<h2>Valores médios em colunas<a class="headerlink" href="#valores-medios-em-colunas" title="Permalink to this headline">¶</a></h2>
+<p>Os valores em destaque podem ser organizados lado a lado. Para tal, utilizaremos o método <code class="docutils literal notranslate"><span class="pre">.columns()</span></code>, com 3 colunas</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Valores médios</span>
+<span class="n">cond_med</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;condominio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1">#Valor médio do condomínio</span>
+<span class="n">preco_med</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1">#Preço médio</span>
+<span class="n">area_med</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1">#Área média</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Valores médios&#39;</span><span class="p">)</span>
+<span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">,</span> <span class="n">c3</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># Cria as 3 colunas</span>
+<span class="n">c1</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s1">&#39;Condomínio (R$)&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">cond_med</span><span class="p">))</span> <span class="c1">#1ra coluna: condomínio</span>
+<span class="n">c2</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s1">&#39;Preço (R$)&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">preco_med</span><span class="p">))</span> <span class="c1">#2da coluna: preço</span>
+<span class="n">c3</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s1">&#39;Área(M2)&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">area_med</span><span class="p">))</span> <span class="c1">#4ra coluna: área</span>
+</pre></div>
+</div>
+<p><strong>Código final</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Importa bibliotecas</span>
+<span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1">#Título na página</span>
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Apartamentos na cidade do Rio de Janeiro&#39;</span><span class="p">)</span>
+
+<span class="c1">#Carrega a base</span>
+<span class="n">rioAptos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/mvinoba/notebooks-for-binder/master/dados.csv&#39;</span><span class="p">)</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">rioAptos</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1">#Escolha do bairro</span>
+<span class="n">bairros</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;bairro&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">bairro</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">multiselect</span><span class="p">(</span><span class="s1">&#39;Escolha o bairro&#39;</span><span class="p">,</span> <span class="n">bairros</span> <span class="p">)</span>
+
+<span class="c1">#Filtra de acordo com o bairro escolhido</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;bairro&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">bairro</span><span class="p">)]</span>
+
+<span class="c1"># Escolha dos valores</span>
+<span class="n">menor</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="c1">#Obtem o menor preço</span>
+<span class="n">maior</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="c1">#Obtem o maior preço</span>
+
+<span class="n">faixa</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span><span class="s1">&#39;Faixa de valor&#39;</span><span class="p">,</span> <span class="n">menor</span><span class="p">,</span> <span class="n">maior</span><span class="p">,</span> <span class="p">[</span><span class="n">menor</span><span class="p">,</span> <span class="n">maior</span><span class="p">])</span> <span class="c1">#Valor inicial e final</span>
+
+<span class="c1">#Filtra a base pelos valores escolhidos</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">faixa</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="c1">#Apenas preços acima do menor escolhido</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">faixa</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="c1">#Apenas preços abaixo do maior escolhido</span>
+
+<span class="c1">#Mostra a base</span>
+<span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+
+<span class="c1">#Valores médios</span>
+<span class="n">cond_med</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;condominio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1">#Valor médio do condomínio</span>
+<span class="n">preco_med</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1">#Preço médio</span>
+<span class="n">area_med</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1">#Área média</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Valores médios&#39;</span><span class="p">)</span>
+<span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">,</span> <span class="n">c3</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># Cria as 3 colunas</span>
+<span class="n">c1</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s1">&#39;Condomínio (R$)&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">cond_med</span><span class="p">))</span> <span class="c1">#1ra coluna: condomínio</span>
+<span class="n">c2</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s1">&#39;Preço (R$)&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">preco_med</span><span class="p">))</span> <span class="c1">#2da coluna: preço</span>
+<span class="n">c3</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s1">&#39;Área(M2)&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">area_med</span><span class="p">))</span> <span class="c1">#4ra coluna: área</span>
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="barra-lateral">
+<h2>Barra lateral<a class="headerlink" href="#barra-lateral" title="Permalink to this headline">¶</a></h2>
+<p>De maneira a apresentar os dados melhor visualmente, colocaremos os elementos interativos em uma barra lateral. Para isso precisaremos modificar as linhas de código onde onde há a entrada de dados pelo usuário, incluindo <code class="docutils literal notranslate"><span class="pre">.sidebar</span></code> nos métodos <code class="docutils literal notranslate"><span class="pre">.multiselect()</span></code> e <code class="docutils literal notranslate"><span class="pre">.slider()</span></code>.</p>
+<p>Na escolha do bairro:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">bairro</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">multiselect</span><span class="p">(</span><span class="s1">&#39;Escolha o bairro&#39;</span><span class="p">,</span> <span class="n">bairros</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Na escolha dos valores:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">faixa</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span><span class="s1">&#39;Faixa de valor&#39;</span><span class="p">,</span> <span class="n">menor</span><span class="p">,</span> <span class="n">maior</span><span class="p">,</span> <span class="p">[</span><span class="n">menor</span><span class="p">,</span> <span class="n">maior</span><span class="p">])</span> <span class="c1">#Valor inicial e final</span>
+</pre></div>
+</div>
+<p><strong>Código final</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Importa bibliotecas</span>
+<span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1">#Título na página</span>
+<span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Apartamentos na cidade do Rio de Janeiro&#39;</span><span class="p">)</span>
+
+<span class="c1">#Carrega a base</span>
+<span class="n">rioAptos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/mvinoba/notebooks-for-binder/master/dados.csv&#39;</span><span class="p">)</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">rioAptos</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1">#Escolha do bairro</span>
+<span class="n">bairros</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;bairro&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">bairro</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">multiselect</span><span class="p">(</span><span class="s1">&#39;Escolha o bairro&#39;</span><span class="p">,</span> <span class="n">bairros</span> <span class="p">)</span>
+
+<span class="c1">#Filtra de acordo com o bairro escolhido</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;bairro&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">bairro</span><span class="p">)]</span>
+
+<span class="c1"># Escolha dos valores</span>
+<span class="n">menor</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="c1">#Obtem o menor preço</span>
+<span class="n">maior</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="c1">#Obtem o maior preço</span>
+
+<span class="n">faixa</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">sidebar</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span><span class="s1">&#39;Faixa de valor&#39;</span><span class="p">,</span> <span class="n">menor</span><span class="p">,</span> <span class="n">maior</span><span class="p">,</span> <span class="p">[</span><span class="n">menor</span><span class="p">,</span> <span class="n">maior</span><span class="p">])</span> <span class="c1">#Valor inicial e final</span>
+
+<span class="c1">#Filtra a base pelos valores escolhidos</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="n">faixa</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="c1">#Apenas preços acima do menor escolhido</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">&lt;=</span><span class="n">faixa</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span> <span class="c1">#Apenas preços abaixo do maior escolhido</span>
+
+<span class="c1">#Mostra a base</span>
+<span class="n">st</span><span class="o">.</span><span class="n">dataframe</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+
+<span class="c1">#Valores médios</span>
+<span class="n">cond_med</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;condominio&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1">#Valor médio do condomínio</span>
+<span class="n">preco_med</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;preco&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1">#Preço médio</span>
+<span class="n">area_med</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;area&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1">#Área média</span>
+
+<span class="n">st</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Valores médios&#39;</span><span class="p">)</span>
+<span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">,</span> <span class="n">c3</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># Cria as 3 colunas</span>
+<span class="n">c1</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s1">&#39;Condomínio (R$)&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">cond_med</span><span class="p">))</span> <span class="c1">#1ra coluna: condomínio</span>
+<span class="n">c2</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s1">&#39;Preço (R$)&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">preco_med</span><span class="p">))</span> <span class="c1">#2da coluna: preço</span>
+<span class="n">c3</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="s1">&#39;Área(M2)&#39;</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">area_med</span><span class="p">))</span> <span class="c1">#4ra coluna: área</span>
+
+</pre></div>
+</div>
+</div>
+<div class="section" id="referencias">
+<h2>Referências<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
+<p>FIGUEIREDO, V. Base de dados com apartamentos do Rio de Janeiro. Disponível em: <a class="reference external" href="https://github.com/mvinoba/notebooks-for-binder">https://github.com/mvinoba/notebooks-for-binder</a>. Acesso em 27 ago 2021.</p>
+<p><a class="reference external" href="http://docs.streamlit.io/en/stable/api.html">STREAMLIT. Streamlit API Reference.</a>. Acesso em 27 ago 2021.</p>
+<div class="section" id="outros-materiais">
+<h3>Outros materiais<a class="headerlink" href="#outros-materiais" title="Permalink to this headline">¶</a></h3>
+<p>FIGUEIREDO, V. Seus primeiros passos como Data Scientist: Introdução ao Pandas!. Blog Data Hackers, via <a class="reference external" href="http://Medium.com">Medium.com</a>. Disponível em <a class="reference external" href="https://medium.com/data-hackers/uma-introdu%C3%A7%C3%A3o-simples-ao-pandas-1e15eea37fa1">https://medium.com/data-hackers/uma-introdu%C3%A7%C3%A3o-simples-ao-pandas-1e15eea37fa1</a>. Acesso em 27 ago 2021.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/05-Apresentacao"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      De Darlon Vasata<br/>
+    
+        &copy; direito autoral 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

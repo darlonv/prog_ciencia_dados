@@ -1,0 +1,631 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercícios &#8212; Programação para Ciência de Dados</title>
+    
+  <link href="../../../_static/css/theme.css" rel="stylesheet">
+  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Programação para Ciência de Dados</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Pesquise este livro ..." aria-label="Pesquise este livro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Curso
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../Planejamento.html">
+   Planejamento
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../../01-Intro/01-Intro.html">
+   Python
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-Intro/01-A_Linguagem.html">
+     A linguagem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-Intro/02-Operadores.html">
+     Expressões
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-Intro/03-Identificadores.html">
+     Identificadores
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01-Intro/04-Tipos_de_variaveis.html">
+     Tipos de variáveis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01-if.html">
+     If
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02-elif.html">
+     elif
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-Repeticao/01-Repeticao.html">
+     Estruturas de repetição
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-Repeticao/02-For.html">
+     For
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03-Repeticao/03-While.html">
+     While
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-Funcoes/01-Funcoes.html">
+     Funções
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04-Funcoes/02-Escopo.html">
+     Escopo de variáveis
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-Estruturas/01-Sequencias.html">
+     Sequências
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-Estruturas/02-Listas.html">
+     Listas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-Estruturas/03-Strings.html">
+     <em>
+      Strings
+     </em>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-Estruturas/04-Tuplas.html">
+     Tuplas
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-Estruturas/05-Conjuntos.html">
+     Conjuntos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05-Estruturas/06-Dicionarios.html">
+     Dicionários
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08-Arquivos/01-Arquivos.html">
+     Arquivos
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08-Arquivos/02-Texto.html">
+     Arquivos texto
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08-Arquivos/03-csv.html">
+     CSV
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08-Arquivos/04-json.html">
+     JSON
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08-Arquivos/05-xml.html">
+     XML
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08-Arquivos/06-Serializacao_binario.html">
+     Serialização e arquivos binários
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-Funcoes_especiais/01-Iterators_e_generators.html">
+     Iterators e generators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-Funcoes_especiais/02-Comprehensions.html">
+     Comprehensions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-Funcoes_especiais/03-Enumerate_e_zip.html">
+     Enumerate e Zip
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../09-Funcoes_especiais/04-Funcoes_lambda.html">
+     Map e funções lambda
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Alternar de navegação" aria-controls="site-navigation"
+                title="Alternar de navegação" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Baixe esta página"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../../_sources/content/02-Python/02-Selecao/01-if_exercicios.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Baixar arquivo fonte" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir em PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo tela cheia"
+        title="Modo tela cheia"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/content/02-Python/02-Selecao/01-if_exercicios.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lançamento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Exercícios</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="exercicios">
+<h1>Exercícios<a class="headerlink" href="#exercicios" title="Permalink to this headline">¶</a></h1>
+<p>Escreva um programa que verifique a validade de uma senha fornecida pelo usuário. A senha válida é o número 4598. Devem ser impressas as seguintes mensagens:</p>
+<ul class="simple">
+<li><p>ACESSO PERMITIDO caso a senha seja válida.</p></li>
+<li><p>ACESSO BLOQUEADO caso a senha seja inválida.</p></li>
+</ul>
+<p>Pergunte 3 números ao usuário. Mostre o menor e o maior números digitados.</p>
+<p>Pergunte 3 números ao usuário. Mostre esses números em ordem, do menor para o maior.</p>
+<p>Pergunte 5 números ao usuário. Mostre esses números em ordem, do menor para o maior.</p>
+<!---
+n1=5
+n2=7
+n3=3
+n4=1
+n5=9
+
+#obtém o menor número
+menor = n1
+if n2 < menor: menor = n2
+if n3 < menor: menor = n3
+if n4 < menor: menor = n4
+if n5 < menor: menor = n5
+
+#obtém o maior número
+maior = n1
+if n2 > maior: maior = n2
+if n3 > maior: maior = n3
+if n4 > maior: maior = n4
+if n5 > maior: maior = n5
+
+sup = maior+1
+
+#substitui o maior número por um número maior que todos
+if   n1 == menor: n1 = sup
+elif n2 == menor: n2 = sup
+elif n3 == menor: n3 = sup
+elif n4 == menor: n4 = sup
+elif n5 == menor: n5 = sup
+
+print('menor:', menor)
+print('n1', n1)
+print('n2', n2)
+print('n3', n3)
+print('n4', n4)
+print('n5', n5)
+
+
+#obtém o menor número
+menor = n1
+if n2 < menor: menor = n2
+if n3 < menor: menor = n3
+if n4 < menor: menor = n4
+if n5 < menor: menor = n5
+    
+#substitui o maior número por um número maior que todos
+if   n1 == menor: n1 = sup
+elif n2 == menor: n2 = sup
+elif n3 == menor: n3 = sup
+elif n4 == menor: n4 = sup
+elif n5 == menor: n5 = sup
+    
+print('menor:', menor)
+print('n1', n1)
+print('n2', n2)
+print('n3', n3)
+print('n4', n4)
+print('n5', n5)
+
+
+#obtém o menor número
+menor = n1
+if n2 < menor: menor = n2
+if n3 < menor: menor = n3
+if n4 < menor: menor = n4
+if n5 < menor: menor = n5
+    
+#substitui o maior número por um número maior que todos
+if   n1 == menor: n1 = sup
+elif n2 == menor: n2 = sup
+elif n3 == menor: n3 = sup
+elif n4 == menor: n4 = sup
+elif n5 == menor: n5 = sup
+    
+print('menor:', menor)
+print('n1', n1)
+print('n2', n2)
+print('n3', n3)
+print('n4', n4)
+print('n5', n5)
+
+
+#obtém o menor número
+menor = n1
+if n2 < menor: menor = n2
+if n3 < menor: menor = n3
+if n4 < menor: menor = n4
+if n5 < menor: menor = n5
+    
+#substitui o maior número por um número maior que todos
+if   n1 == menor: n1 = sup
+elif n2 == menor: n2 = sup
+elif n3 == menor: n3 = sup
+elif n4 == menor: n4 = sup
+elif n5 == menor: n5 = sup
+    
+print('menor:', menor)
+print('n1', n1)
+print('n2', n2)
+print('n3', n3)
+print('n4', n4)
+print('n5', n5)
+
+
+#obtém o menor número
+menor = n1
+if n2 < menor: menor = n2
+if n3 < menor: menor = n3
+if n4 < menor: menor = n4
+if n5 < menor: menor = n5
+    
+#substitui o maior número por um número maior que todos
+if   n1 == menor: n1 = sup
+elif n2 == menor: n2 = sup
+elif n3 == menor: n3 = sup
+elif n4 == menor: n4 = sup
+elif n5 == menor: n5 = sup
+    
+print('menor:', menor)
+print('n1', n1)
+print('n2', n2)
+print('n3', n3)
+print('n4', n4)
+print('n5', n5)
+---><p>As maçãs custam <code class="docutils literal notranslate"><span class="pre">R$</span> <span class="pre">0,30</span></code>  cada se forem compradas menos do que uma dúzia, e <code class="docutils literal notranslate"><span class="pre">R$</span> <span class="pre">0,25</span></code> se forem compradas pelo menos doze.<br />
+Escreva um programa que leia o número de maçãs compradas, calcule e escreva o valor total da compra.</p>
+<p>Tendo como entrada a altura e o sexo (codificado da seguinte forma: f:feminino m:masculino) de uma pessoa, construa um programa que calcule e imprima seu peso ideal, utilizando as seguintes fórmulas:</p>
+<ul class="simple">
+<li><p>para homens: (72.7 * Altura) – 58</p></li>
+<li><p>para mulheres: (62.1 * Altura) – 44.7</p></li>
+</ul>
+<p>Faça um programa em que são solicitados ao ao usuário dois valores (operandos) e um operador, que pode ser <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code> ou <code class="docutils literal notranslate"><span class="pre">/</span></code>. De acordo com o operador digitado, mostre o resultado da operação.</p>
+<p>Ler 3 valores (A, B e C) representando as medidas dos lados de um triângulo e escrever se formam ou não um triângulo.<br />
+OBS: para formar um triângulo, o valor de cada lado deve ser menor que a soma dos outros 2 lados.</p>
+<ul class="simple">
+<li><p>Utilize apenas uma vez a estrutura se (<strong>if</strong>) no algoritmo.</p></li>
+</ul>
+<p>Escreva um programa para ler o número de lados de um polígono regular e a medida do lado (em cm). Calcular e imprimir o seguinte:</p>
+<ul class="simple">
+<li><p>Se o número de lados for igual a 3 escrever TRIÂNGULO e o valor da área.</p></li>
+<li><p>Se o número de lados for igual a 4 escrever QUADRADO e o valor da sua área.</p></li>
+<li><p>Se o número de lados for igual a 5 escrever PENTÁGONO.</p></li>
+<li><p>Acrescente as seguintes mensagens à solução do exercício anterior, conforme o caso.</p>
+<ul>
+<li><p>Caso o número de lados seja inferior a 3 escrever NÃO É UM POLÍGONO.</p></li>
+<li><p>Caso o número de lados seja superior a 5 escrever POLÍGONO NÃO IDENTIFICADO.</p></li>
+</ul>
+</li>
+</ul>
+<p>Escreva um programa que recebe um inteiro e diga se é par ou ímpar. Use o operador matemático <code class="docutils literal notranslate"><span class="pre">%</span></code> (resto da divisão ou módulo) e o teste condicional <code class="docutils literal notranslate"><span class="pre">if</span></code>.</p>
+<p>Faça um programa para ler um número e imprimir uma mensagem dizendo se tal número é par e positivo ao mesmo tempo.</p>
+<p>Faça um programa que recebe a idade de um nadador e classifique-o numa das seguintes categorias:</p>
+<ul class="simple">
+<li><p>Adulto (idade &gt;= 18);</p></li>
+<li><p>Juvenil (idade &gt;= 14 e idade &lt; 18);</p></li>
+<li><p>Infantil (idade &gt;=9 e idade &lt; 14);</p></li>
+<li><p>Mirim (Idade &lt; 9).</p></li>
+</ul>
+<p>Uma empresa abriu uma linha de crédito para os funcionários. O valor da prestação não pode ultrapassar 30% do salário. Faça um programa que receba o salário, o valor do empréstimo e o número de prestações e informe se o empréstimo pode ser concedido. Nenhum dos valores informados pode ser zero ou negativo.</p>
+<p>Faça um programa que receber um número inteiro e informar se ele é divisível por 10, por 5, por 2 ou se não é divisível por nenhum destes.</p>
+<p>Um comerciante comprou um produto e quer vendê-lo com lucro de 45% se o valor da compra for menor que 20,00; caso contrário, o lucro será de 30%. Entrar com o valor do produto e imprimir o valor da venda.</p>
+<p>Escreva um programa que pergunte o raio de uma circunferência, e sem seguida mostre o diâmetro, comprimento e área da circunferência.</p>
+<p>Para doar sangue é necessário ter entre 18 e 67 anos. Faça um <em>software</em> que pergunte a idade de uma pessoa e diga se ela pode doar sangue ou não.</p>
+<p>Faça um programa que receba três notas, calcule e mostre a média aritmética entre elas, caso a media aritmética seja:</p>
+<ul class="simple">
+<li><p>Média maior ou igual a 7: ALUNO APROVADO</p></li>
+<li><p>Média menor que 7: ALUNO REPROVADO</p></li>
+</ul>
+<p>Faça um programa que calcula o desconto previdenciário de determinado funcionário. O desconto deve ser calculado com base no salário do funcionário, sendo este 15.2% do salário. O desconto é limitado de R$ 1000,00. Informe o desconto, tendo como entrada o salário.</p>
+<p>Desenvolva um programa que informa se determinado aluno está ou não reprovado por faltas. O aluno deve ter 75% de presença na disciplina para ser aprovado.</p>
+<p>Um comerciante comprou determinado produto, e deseja vendê-lo obtendo 45% de lucro, caso o valor da compra seja menor que R$ 200,00. Caso contrário, o lucro deverá ser de 51%. Implemente um programa que peça o valor de custo do produto e calcule por quanto o produto deve ser vendido.</p>
+<p>Faça um Programa que peça um número correspondente a um determinado ano e em seguida informe se este ano é ou não bissexto. Considere valores a partir do ano 1000.</p>
+<p>Faça um Programa para um caixa eletrônico. O programa deverá perguntar ao usuário a valor do saque e depois informar quantas notas de cada valor serão fornecidas. As notas disponíveis serão as de 1, 5, 10, 50 e 100 reais. O valor mínimo é de 10 reais e o máximo de 600 reais. O programa não deve se preocupar com a quantidade de notas existentes na máquina.</p>
+<ul class="simple">
+<li><p>Exemplo 1: Para sacar a quantia de 256 reais, o programa fornece duas notas de 100, uma nota de 50, uma nota de 5 e uma nota de 1;</p></li>
+<li><p>Exemplo 2: Para sacar a quantia de 399 reais, o programa fornece três notas de 100, uma nota de 50, quatro notas de 10, uma nota de 5 e quatro notas de 1.</p></li>
+</ul>
+<p>(Fonte: <a class="reference external" href="https://wiki.python.org.br/EstruturaDeDecisao">EstruturaDeDecisao - PythonBrasil</a>)</p>
+<p>Faça um programa que faça 5 perguntas para uma pessoa sobre um crime. As perguntas são:</p>
+<ul class="simple">
+<li><p>“Telefonou para a vítima?”</p></li>
+<li><p>“Esteve no local do crime?”</p></li>
+<li><p>“Mora perto da vítima?”</p></li>
+<li><p>“Devia para a vítima?”</p></li>
+<li><p>“Já trabalhou com a vítima?”</p></li>
+</ul>
+<p>O programa deve no final emitir uma classificação sobre a participação da pessoa no crime. Se a pessoa responder positivamente a 2 questões ela deve ser classificada como “Suspeita”, entre 3 e 4 como “Cúmplice” e 5 como “Assassino”. Caso contrário, ele será classificado como “Inocente”.</p>
+<p>(Fonte: <a class="reference external" href="https://wiki.python.org.br/EstruturaDeDecisao">EstruturaDeDecisao - PythonBrasil</a>)</p>
+<p>Um posto está vendendo combustíveis com a seguinte tabela de descontos:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Quantidade</p></th>
+<th class="head"><p>Etanol</p></th>
+<th class="head"><p>Gasolina</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>até 20 litros</p></td>
+<td><p>desconto de 3%</p></td>
+<td><p>desconto de 4%</p></td>
+</tr>
+<tr class="row-odd"><td><p>acima de 20 litros</p></td>
+<td><p>desconto de 5%</p></td>
+<td><p>desconto de 6%</p></td>
+</tr>
+</tbody>
+</table>
+<p>Escreva um algoritmo que leia o número de litros vendidos, o tipo de combustível (codificado da seguinte forma: E-etanol, G-gasolina). Calcule e imprima o valor a ser pago pelo cliente sabendo-se que o preço do litro da gasolina é R\<span class="math notranslate nohighlight">\( 4,50 o preço do litro do etano é R\\\)</span> 3,15.</p>
+<p>(Adaptado de <a class="reference external" href="https://wiki.python.org.br/EstruturaDeDecisao">EstruturaDeDecisao - PythonBrasil</a>)</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/02-Python/02-Selecao"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      De Darlon Vasata<br/>
+    
+        &copy; direito autoral 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
