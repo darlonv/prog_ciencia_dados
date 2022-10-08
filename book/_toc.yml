@@ -25,12 +25,12 @@ parts:
           - file: content/02-Python/04-Funcoes/01-Funcoes
           - file: content/02-Python/04-Funcoes/02-Escopo
           - file: content/02-Python/04-Funcoes/03-Recursividade
-          - file: content/02-Python/05-Estrutura/01-Sequencias
-          - file: content/02-Python/05-Estrutura/02-Listas
-          - file: content/02-Python/05-Estrutura/03-Strings
-          - file: content/02-Python/05-Estrutura/04-Tuplas
-          - file: content/02-Python/05-Estrutura/05-Conjuntos
-          - file: content/02-Python/05-Estrutura/06-Dicionarios
+          - file: content/02-Python/05-Estruturas/01-Sequencias
+          - file: content/02-Python/05-Estruturas/02-Listas
+          - file: content/02-Python/05-Estruturas/03-Strings
+          - file: content/02-Python/05-Estruturas/04-Tuplas
+          - file: content/02-Python/05-Estruturas/05-Conjuntos
+          - file: content/02-Python/05-Estruturas/06-Dicionarios
           - file: content/02-Python/06-Bibliotecas/01-Bibliotecas
           - file: content/02-Python/08-Arquivos/01-Arquivos
           - file: content/02-Python/08-Arquivos/02-Texto
@@ -38,24 +38,28 @@ parts:
           - file: content/02-Python/08-Arquivos/04-json
           - file: content/02-Python/08-Arquivos/05-xml
           - file: content/02-Python/08-Arquivos/06-Serializacao_binario
-    - caption: Numpy
-      numbered: False
-      chapters:
-        - file: content/03-Numpy/01-Arrays
-          sections:
-          - file: content/03-Numpy/02-Operacoes
-    - caption: Pandas
-      numbered: False
-      chapters:
-        - file: content/04-Pandas/01-Pandas
-          sections:
-          - file: content/04-Pandas/01-Pandas_exercicio_enem
-    - caption: Apresentacao
-      numbered: False
-      chapters:
-        - file: content/05-Apresentacao/01-Streamlit
-    - caption: Big Data
-      numbered: False
-      chapters:
-        - file: content/06-Big_data/01-Estruturas_probabilisticas
+          - file: content/02-Python/09-Funcoes_especiais/01-Iterators_e_generators
+          - file: content/02-Python/09-Funcoes_especiais/02-Comprehensions
+          - file: content/02-Python/09-Funcoes_especiais/03-Enumerate_e_zip
+          - file: content/02-Python/09-Funcoes_especiais/04-Funcoes_lambda
+#     - caption: Numpy
+#       numbered: False
+#       chapters:
+#         - file: content/03-Numpy/01-Arrays
+#           sections:
+#           - file: content/03-Numpy/02-Operacoes
+#     - caption: Pandas
+#       numbered: False
+#       chapters:
+#         - file: content/04-Pandas/01-Pandas
+#           sections:
+#           - file: content/04-Pandas/01-Pandas_exercicio_enem
+#     - caption: Apresentacao
+#       numbered: False
+#       chapters:
+#         - file: content/05-Apresentacao/01-Streamlit
+#     - caption: Big Data
+#       numbered: False
+#       chapters:
+#         - file: content/06-Big_data/01-Estruturas_probabilisticas
 # - file: markdown-notebooks
