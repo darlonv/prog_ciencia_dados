@@ -42,16 +42,16 @@ parts:
           - file: content/02-Python/09-Funcoes_especiais/02-Comprehensions
           - file: content/02-Python/09-Funcoes_especiais/03-Enumerate_e_zip
           - file: content/02-Python/09-Funcoes_especiais/04-Funcoes_lambda
-#     - caption: Numpy
-#       numbered: False
-#       chapters:
-#         - file: content/03-Numpy/01-Arrays
-#           sections:
-#           - file: content/03-Numpy/02-Operacoes
-#     - caption: Pandas
-#       numbered: False
-#       chapters:
-#         - file: content/04-Pandas/01-Pandas
+    - caption: Numpy
+      numbered: False
+      chapters:
+        - file: content/03-Numpy/01-Arrays
+          sections:
+          - file: content/03-Numpy/02-Operacoes
+    - caption: Pandas
+      numbered: False
+      chapters:
+        - file: content/04-Pandas/01-Pandas
 #           sections:
 #           - file: content/04-Pandas/01-Pandas_exercicio_enem
 #     - caption: Apresentacao
